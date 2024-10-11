@@ -1,0 +1,162 @@
+<!DOCTYPE html> 
+<html lang = "en">
+<link rel="icon" type="image/jpg" href="../static/icon.jpg"/>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+    <title>Neurus Robotics - {{session['div']}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Modal -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    {%if s == 1%}
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('#saludo').modal('show');
+        });
+    </script>
+    {%endif%}
+    <script>
+        function info(dir,nit,tel){
+          $("#Direccioni").prop("disabled",false);
+          $("#NITi").prop("disabled",false);
+          $("#Telefonoi").prop("disabled",false);               
+
+          $("#Direccioni").val(dir)
+          $("#NITi").val(nit)
+          $("#Telefonoi").val(tel)
+
+          $("#botoni").html('Editar');
+
+          $("#formi").attr('action','{{url_for("EditarInfo")}}');
+          $("#info").modal('show')
+        }
+    </script>
+</head>
+
+<body>
+    <link rel="stylesheet" href="{{url_for('static',filename='Formato.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-family: Montserrat; font-size: 6mm;">Neurus Robotics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+                    {% if session['div'] == 'Ventas'  %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('Ventas')}}">Venta</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('Clientes')}}">Clientes</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('Productos')}}">Productos</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('RV')}}">Reporte de ventas</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('Login')}}">Salir</a>
+                    </li>
+                    {%endif%}
+
+                    {% if session['div'] == 'Almacenes'  %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('Productos')}}">Productos</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('Proveedores')}}">Proveedores</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('Compras')}}">Compra</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('RC')}}">Reporte de compras</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('Login')}}">Salir</a>
+                    </li>
+                    {%endif%}
+
+                    {% if session['div'] == 'Administracion' %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('Usuarios')}}" style="font-family: Montserrat; font-size: 5mm;">Usuarios</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('Ventas')}}" style="font-family: Montserrat; font-size: 5mm;">Venta</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('Compras')}}" style="font-family: Montserrat; font-size: 5mm;">Compra</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('Clientes')}}" style="font-family: Montserrat; font-size: 5mm;">Clientes</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('Productos')}}" style="font-family: Montserrat; font-size: 5mm;">Productos</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('Proveedores')}}" style="font-family: Montserrat; font-size: 5mm;">Proveedores</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('RV')}}" style="font-family: Montserrat; font-size: 4.5mm;">Reporte de Ventas</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('RC')}}" style="font-family: Montserrat; font-size: 4.5mm;">Reporte de Compras</a>  
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('Login')}}" style="font-family: Montserrat; font-size: 4.5mm;">Salir</a>
+                    </li>
+                    {%endif%}
+                </ul>
+                {% if session['div'] == 'Administracion' %}
+                <a class="btn btn-dark" onclick = "info('{{i.val().Direccion}}','{{i.val().NIT}}','{{i.val().Telefono}}')" style="margin-left:auto; color: aliceblue; font-size: 4mm;">Acerca de</a>
+                {%endif%}
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="saludo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Neurus Robotics - {{session['div']}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h1 style="text-align: center;">Hola {{session['name']}} !!</h1>
+        </div>
+        <div class="modal-footer" style="display: flex; place-items: center; justify-content: center;">
+          <button type="btn" class="btno" data-bs-dismiss="modal">Hola!</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    {% block content%}
+    {% endblock%}
+
+{% if session['div'] == 'Administracion' %}
+<!-- Info -->
+<div class="modal fade" id="info" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="tituloi">Neurus Robotics</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="" method="POST" style="font-size: 20px;" id="formi">                                               
+                  <div class="mb-3">
+                      <label for="Direccioni" class="form-label">Direccion</label>
+                      <input id="Direccioni" name="Direccioni" class="form-control" required="1">
+                  </div>
+                  <div class="mb-3">
+                      <label for="NITi" class="form-label">NIT</label>
+                      <input id="NITi" name="NITi" class="form-control" required="1">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Telefonoi" class="form-label">Telefono</label>
+                      <input id="Telefonoi" name="Telefonoi" class="form-control" required="1">
+                  </div>
+                  <div style="display: flex; justify-content: space-around;">
+                      <button type="btn" class="btno" data-bs-dismiss="modal">Cancelar</button>
+                      <button id="botoni" type="submit" name="botoni" class="btno"></button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+{%endif%}
+
+</body>
+</html>

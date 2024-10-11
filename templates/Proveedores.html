@@ -1,0 +1,173 @@
+{% extends "Formato.html" %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">    
+    function agregar(n){
+        $("#Id").prop("disabled",true);
+        $("#NIT").prop("disabled",false);    
+        $("#Nombre").prop("disabled",false);              
+        $("#Contacto").prop("disabled",false);
+        $("#Direccion").prop("disabled",false);  
+        //inicializa los datos en la vista forma modal
+        $("#Id").val(n)
+        $("#NIT").val('')
+        $("#Nombre").val('')
+        $("#Contacto").val('')
+        $("#Direccion").val('')        
+        //cambio los datos del boton y el titulo
+        $("#boton").html('Registrar');
+        $("#titulo").html('Registrar proveedor');
+        //cambia la url del action
+        $("#form").attr('action','{{url_for("AgregarEditarProveedor")}}');  
+        $("#abm").modal('show')
+    }
+    function actualizar(id,nit,nom,con,dir){
+        $("#Id").prop("disabled",true);
+        $("#NIT").prop("disabled",false);    
+        $("#Nombre").prop("disabled",false);              
+        $("#Contacto").prop("disabled",false);
+        $("#Direccion").prop("disabled",false);
+
+        $("#Id").val(id)
+        $("#NIT").val(nit)
+        $("#Nombre").val(nom)
+        $("#Contacto").val(con)
+        $("#Direccion").val(dir)
+
+        $("#boton").html('Editar');
+        $("#titulo").html('Editar proveedor');
+
+        $("#form").attr('action','{{url_for("AgregarEditarProveedor")}}');  
+        $("#abm").modal('show')
+    }
+    function eliminar(id,nit,nom,con,dir){
+        $("#Id").prop("disabled",true);
+        $("#NIT").prop("disabled",true);    
+        $("#Nombre").prop("disabled",true);              
+        $("#Contacto").prop("disabled",true);
+        $("#Direccion").prop("disabled",true);
+
+        $("#Id").val(id)
+        $("#NIT").val(nit)
+        $("#Nombre").val(nom)
+        $("#Contacto").val(con)
+        $("#Direccion").val(dir)
+
+        $("#boton").html('Eliminar');
+        $("#titulo").html('Eliminar proveedor');
+
+        $("#form").attr('action','{{url_for("EliminarProveedor")}}');  
+        $("#abm").modal('show')
+    }
+</script>
+
+<h1 style="margin: 1%;">Lista de proveedores</h1>  
+<div class="container" style="width: 90%;">
+    
+    <div style="display: flex; flex-direction: row; margin-bottom: 1%;">
+        <form action="/Proveedores/BuscarProveedor" method="POST" style="display: flex; flex-direction: row; width: 40%;">
+            <label for="nom" style="font-size: 7mm; margin-right: 1%;">Proveedor:</label>
+            <input name="nom" class="form-control" style="width: 50%; align-self: center; margin-right: 1%">
+            <button type="submit" class="btn btn-primary" style="align-self: center;">Buscar</button>
+        </form>
+        <a class="btn btn-dark" href="{{url_for('ImprimirProv')}}" style="margin-left: auto;">Imprimir</a>
+        {% if session['div'] == 'Almacenes' or session['div'] == 'Administracion' %}
+        <button type="button" class="btn btn-primary" onclick="agregar('{{n}}')" style=" margin-left: 1%;">Registrar proveedor</button>  
+        {%endif%}  
+    </div>
+
+    <table class="table table-sm table-dark table-hover">
+        <thead>
+            <tr class="table-active">
+                <th>#</th>
+                <th>NIT</th>
+                <th>Nombre</th>
+                <th>Contacto</th>
+                <th>Dirección</th>
+                {% if session['div'] == 'Almacenes' or b != 0 or session['div'] == 'Administracion' %}
+                <th>Operación</th>
+                {%endif%}  
+            </tr>
+        </thead>
+        <tbody>
+        {% for t in data %}
+        {%if b == t.key() %}
+            <tr>    
+                <td>{{t.key()}}</td>
+                <td>{{t.val()['NIT']}}</td>
+                <td>{{t.val()['Nombre']}}</td>
+                <td>{{t.val()['Contacto']}}</td>
+                <td>{{t.val()['Direccion']}}</td>
+                <td>
+                    {% if session['div'] == 'Almacenes' or session['div'] == 'Administracion' %}
+                    <a class="btn btn-outline-warning" onclick="actualizar('{{t.key()}}','{{t.val().NIT}}','{{t.val().Nombre}}','{{t.val().Contacto}}','{{t.val().Direccion}}')">Editar</a>
+                    <a class="btn btn-outline-danger" onclick="eliminar('{{t.key()}}','{{t.val().NIT}}','{{t.val().Nombre}}','{{t.val().Contacto}}','{{t.val().Direccion}}')">Eliminar</a>
+                    {%endif%}
+                    <a class="btn btn-outline-info" href="{{url_for('Proveedores')}}">Volver</a>
+                </td>
+            </tr>
+        {% endif%}
+        {% if t.key() != 0 and b == 0 %}
+        <tr>
+            <td>{{t.key()}}</td>
+            <td>{{t.val()['NIT']}}</td>
+            <td>{{t.val()['Nombre']}}</td>
+            <td>{{t.val()['Contacto']}}</td>
+            <td>{{t.val()['Direccion']}}</td>
+            {% if session['div'] == 'Almacenes' or session['div'] == 'Administracion' %}
+            <td>
+                <a class="btn btn-outline-warning" onclick="actualizar('{{t.key()}}','{{t.val().NIT}}','{{t.val().Nombre}}','{{t.val().Contacto}}','{{t.val().Direccion}}')">Editar</a>
+                <a class="btn btn-outline-danger" onclick="eliminar('{{t.key()}}','{{t.val().NIT}}','{{t.val().Nombre}}','{{t.val().Contacto}}','{{t.val().Direccion}}')">Eliminar</a>
+            </td>
+            {%endif%}
+        </tr>
+        {%endif%}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+    <!-- Modal -->
+<div class="modal fade" id="abm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titulo">Neurus Robotics</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST" style="font-size: 20px;" id="form">                                               
+                    <div class="mb-3">
+                        <label for="Id" class="form-label">Id</label>
+                        <input id="Id" name="Id" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="NIT" class="form-label">NIT</label>
+                        <input id="NIT" name="NIT" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Nombre" class="form-label">Nombre</label>
+                        <input id="Nombre" name="Nombre" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Contacto" class="form-label">Contacto</label>
+                        <input id="Contacto"  name="Contacto" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Direccion" class="form-label">Dirección</label>
+                        <input id="Direccion"  name="Direccion" class="form-control">
+                        <label for="Contacto" class="form-label" style="color: lightslategray;">Campo no obligatorio</label>
+                    </div>
+                    <div style="display: flex; justify-content: space-around;">
+                        <button type="btn" class="btno" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="boton" onclick="$('#Id').prop('disabled', false);" type="submit" name="boton" class="btno"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

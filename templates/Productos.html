@@ -1,0 +1,173 @@
+{% extends "Formato.html" %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">    
+    function agregar(n){
+        $("#Id").prop("disabled",true);
+        $("#Descripcion").prop("disabled",false);    
+        $("#Precio").prop("disabled",false);              
+        $("#Stock").prop("disabled",false);
+        $("#Tipo").prop("disabled",false);  
+        //inicializa los datos en la vista forma modal
+        $("#Id").val(n)
+        $("#Descripcion").val('')
+        $("#Precio").val('')
+        $("#Stock").val('')
+        $("#Tipo").val('')        
+        //cambio los datos del boton y el titulo
+        $("#boton").html('Registrar');
+        $("#titulo").html('Registrar producto');
+        //cambia la url del action
+        $("#form").attr('action','{{url_for("AgregarEditarProducto")}}');  
+        $("#abm").modal('show')
+    }
+    function actualizar(id,des,pre,st,t){
+        $("#Id").prop("disabled",true);
+        $("#Descripcion").prop("disabled",false);    
+        $("#Precio").prop("disabled",false);              
+        $("#Stock").prop("disabled",false);
+        $("#Tipo").prop("disabled",false); 
+
+        $("#Id").val(id)
+        $("#Descripcion").val(des)
+        $("#Precio").val(pre)
+        $("#Stock").val(st)
+        $("#Tipo").val(t)
+
+        $("#boton").html('Editar');
+        $("#titulo").html('Editar producto');
+
+        $("#form").attr('action','{{url_for("AgregarEditarProducto")}}');  
+        $("#abm").modal('show')
+    }
+    function eliminar(id,des,pre,st,t){
+        $("#Id").prop("disabled",true);
+        $("#Descripcion").prop("disabled",true);    
+        $("#Precio").prop("disabled",true);              
+        $("#Stock").prop("disabled",true);
+        $("#Tipo").prop("disabled",true); 
+      
+        $("#Id").val(id)
+        $("#Descripcion").val(des)
+        $("#Precio").val(pre)
+        $("#Stock").val(st)
+        $("#Tipo").val(t)
+
+        $("#boton").html('Eliminar');
+        $("#titulo").html('Eliminar producto');
+
+        $("#form").attr('action','{{url_for("EliminarProducto")}}');  
+        $("#abm").modal('show')
+    }
+</script>
+
+<h1 style="margin: 1%;">Lista de productos</h1>  
+<div class="container" style="width: 90%;">
+    
+    <div style="display: flex; flex-direction: row; margin-bottom: 1%;">
+        <form action="/Productos/BuscarProducto" method="POST" style="display: flex; flex-direction: row; width: 40%;">
+            <label for="cod" style="font-size: 7mm; margin-right: 1%;">Codigo:</label>
+            <input name="cod" class="form-control" style="width: 50%; align-self: center; margin-right: 1%">
+            <button type="submit" class="btn btn-primary" style="align-self: center;">Buscar</button>
+        </form>
+        <a class="btn btn-dark" href="{{url_for('ImprimirP')}}" style="margin-left: auto;">Imprimir</a>
+        <a class="btn btn-dark" href="{{url_for('Reportep')}}" style="margin-left: 1%;">Estadisticas</a>
+        {% if session['div'] == 'Almacenes'  or session['div'] == 'Administracion' %}
+        <button type="button" class="btn btn-primary" onclick="agregar('{{n}}')" style=" margin-left: 1%;">Registrar producto</button>  
+        {%endif%}  
+    </div>
+
+    <table class="table table-sm table-dark table-hover">
+        <thead>
+            <tr class="table-active">
+                <th>#</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Tipo</th>
+                {% if session['div'] == 'Almacenes' or b != 0  or session['div'] == 'Administracion' %}
+                <th>Operación</th>
+                {%endif%}  
+            </tr>
+        </thead>
+        <tbody>
+        {% for t in data %}
+        {%if b == t.key() %}
+            <tr>    
+                <td>{{t.key()}}</td>
+                <td>{{t.val()['Descripcion']}}</td>
+                <td>{{t.val()['Precio']}}</td>
+                <td>{{t.val()['Stock']}}</td>
+                <td>{{t.val()['Tipo']}}</td>
+                <td>
+                    {% if session['div'] == 'Almacenes'  or session['div'] == 'Administracion' %}
+                    <a class="btn btn-outline-warning" onclick="actualizar('{{t.key()}}','{{t.val().Descripcion}}','{{t.val().Precio}}','{{t.val().Stock}}','{{t.val().Tipo}}')">Editar</a>
+                    <a class="btn btn-outline-danger" onclick="eliminar('{{t.key()}}','{{t.val().Descripcion}}','{{t.val().Precio}}','{{t.val().Stock}}','{{t.val().Tipo}}')">Eliminar</a>
+                    {%endif%}
+                    <a class="btn btn-outline-info" href="{{url_for('Productos')}}">Volver</a>
+                </td>
+            </tr>
+        {% endif%}
+        {% if t.key() != 0 and b == 0 %}
+        <tr>
+            <td>{{t.key()}}</td>
+            <td>{{t.val()['Descripcion']}}</td>
+            <td>{{t.val()['Precio']}}</td>
+            <td>{{t.val()['Stock']}}</td>
+            <td>{{t.val()['Tipo']}}</td>
+            {% if session['div'] == 'Almacenes' or session['div'] == 'Administracion' %}
+            <td>
+                <a class="btn btn-outline-warning" onclick="actualizar('{{t.key()}}','{{t.val().Descripcion}}','{{t.val().Precio}}','{{t.val().Stock}}','{{t.val().Tipo}}')">Editar</a>
+                <a class="btn btn-outline-danger" onclick="eliminar('{{t.key()}}','{{t.val().Descripcion}}','{{t.val().Precio}}','{{t.val().Stock}}','{{t.val().Tipo}}')">Eliminar</a>
+            </td>
+            {%endif%}
+        </tr>
+        {%endif%}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+    <!-- Modal -->
+<div class="modal fade" id="abm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titulo">Neurus Robotics</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST" style="font-size: 20px;" id="form">                                               
+                    <div class="mb-3">
+                        <label for="Id" class="form-label">Id</label>
+                        <input id="Id" name="Id" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Descripcion" class="form-label">Descripción</label>
+                        <input id="Descripcion" name="Descripcion" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Precio" class="form-label">Precio</label>
+                        <input id="Precio" name="Precio" class="form-control" required="1" type="number" step="0.01" pattern="^[1-9]\d*$">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Stock" class="form-label">Stock</label>
+                        <input id="Stock"  name="Stock" class="form-control" required="1" type="number" pattern="^[1-9]\d*$">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Tipo" class="form-label">Tipo</label>
+                        <input id="Tipo"  name="Tipo" class="form-control" required="1">
+                    </div>
+                    <div style="display: flex; justify-content: space-around;">
+                        <button type="btn" class="btno" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="boton" onclick="$('#Id').prop('disabled', false);" type="submit" name="boton" class="btno"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

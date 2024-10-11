@@ -1,0 +1,96 @@
+{% extends "Formato.html" %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    function add(i){
+        if (i==1){
+          $("#form").attr('action','{{url_for("Prodc")}}');
+        }
+        if (i==2){
+          $("#form").attr('action','{{url_for("compra")}}');
+        }
+        if (i==3){
+          $("#form").attr('action','{{url_for("limpiarc")}}');
+        }   
+    }
+</script>
+
+<h1 style="margin: 1%;">Formulario de compra</h1>  
+
+<div class="venta">
+    <form action = "" method ="POST" id= "form" class = "formulario" style="padding: 2% 3% 2% 3%; width: 80%; display: flex; flex-direction: row;">
+      <div class= "formulario" style="margin-right: auto;  width: 58%;">
+        <h1>Registrar compra</h1>
+        <div class="mb-3">
+          <label class="form-label" style="font-size: 8mm;">Productos:</label>
+          <div style="display: flex; flex-direction: row;">
+            <select name="Pr" class="form-select" id="Pr" required="1" aria-label="Default select example" style="width: 50%; align-self: center; margin-right: 1%">
+              {% for k in bdp %}
+              <option value="{{k.key()}}">{{k.val()['Descripcion']}}</option>
+              {%endfor%}
+            </select>
+            <label class="form-label" style="font-size: 5mm; align-self: center; margin-left: 1%; margin-right: 1%;">Precio:</label>
+            <input type="text" name="Pc" class="form-control" id="Pc" style="width: 30%;" required="1" type="number" step="0.01" pattern="^[1-9]\d*$">
+            <label class="form-label" style="font-size: 5mm; align-self: center; margin-left: 1%; margin-right: 1%;" >Cantidad:</label>
+            <input type="text" name="c" class="form-control" id="c" style="width: 30%;" required="1" type="number" step="1" pattern="^[1-9]\d*$">
+            <button class="btn btn-dark"  onclick="$('#Proveedor').removeAttr('required'), add(1)" style="margin-left: 1%;">Agregar</button>
+        </div>
+        </div>
+        <table class="table table-dark" style="opacity: 80%; font-size: 70%;">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for t in a%}
+            {% set j= loop.index%}
+            <tr>
+              <td>{{t}}</td>
+              {% for b in bdp %}
+              {% if b.key() == t %}
+              <td>{{b.val()['Descripcion']}}</td>
+              {%endif%}
+              {%endfor%}
+              <td>
+              {% for k in prc %}
+              {% if loop.index == j %}
+              {{k}}
+              {%endif%}
+              {%endfor%}
+              </td>
+              <td>{{a.get(t)}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+      <div class= "formulario"style="display: flex; flex-direction: column; font-size: 7mm;">
+        <div class="mb-3">
+          <label for="Vendedor" class="form-label">Encargado</label>
+          <input name="Vendedor" class="form-control" id="Vendedor" value="{{session['name']}}" readonly> 
+        </div>
+        <div class="mb-3">
+          <label for="Proveedor" class="form-label">Proveedor (Nombre):</label>
+          <select name="Proveedor" id="Proveedor" class="form-select" required="1" aria-label="Default select example" style="width: 50%; align-self: center;">
+            {% for t in prov %}
+            <option value="{{t.val()['Nombre']}}">{{t.val()['Nombre']}}</option>
+            {%endfor%}
+          </select>
+        </div>
+      </div>
+      <div style="margin-left: 34%; margin-right: auto; margin-top: 4%; width: 50%;">
+        <button onclick="$('#Proveedor').removeAttr('required'), $('#Pr').removeAttr('required'), $('#Pc').removeAttr('required'),$('#c').removeAttr('required')  ,add(3)" class="btn btn-primary" id="n" style="margin-right: auto;">Limpiar</button>
+        <button onclick="$('#Proveedor').prop('required', true), $('#Pr').removeAttr('required'), $('#Pc').removeAttr('required'),$('#c').removeAttr('required')  ,add(2)" type="submit" class="btn btn-primary" id="gf" style="margin-left: 30%; margin-right: auto;">Registrar compra</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

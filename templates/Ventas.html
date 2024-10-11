@@ -1,0 +1,145 @@
+{% extends "Formato.html" %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">  
+    function agregar(n){
+        $("#Id").prop("disabled",true);
+        $("#CI").prop("disabled",false);    
+        $("#Nombre").prop("disabled",false);              
+        $("#Contacto").prop("disabled",false);  
+
+        //inicializa los datos en la vista forma modal
+        $("#Id").val(n)
+        $("#CI").val('')
+        $("#Nombre").val('')
+        $("#Contacto").val('')    
+       
+        //cambio los datos del boton y el titulo
+        $("#boton").html('Registrar');
+        $("#titulo").html('Registrar cliente');
+        //cambia la url del action
+        $("#formcl").attr('action','{{url_for("AgregarClienteF")}}');  
+        $("#cliente").modal('show')
+    }
+    function add(i){
+        if (i==1){
+          $("#form").attr('action','{{url_for("Prod")}}');
+        }
+        if (i==2){
+          $("#form").attr('action','{{url_for("venta")}}');
+        }
+        if (i==3){
+          $("#form").attr('action','{{url_for("limpiar")}}');
+        }   
+    }
+</script>
+
+<h1 style="margin: 1%;">Formulario de venta</h1>  
+
+<div class="venta">
+  <form action = "" method ="POST" id= "form" class = "formulario" style="padding: 2% 3% 2% 3%; width: 80%; display: flex; flex-direction: row;">
+    <div class= "formulario" style="margin-right: auto;  width: 53%;">
+      <h1>Registrar venta</h1>
+      <div class="mb-3">
+        <label class="form-label" style="font-size: 8mm;">Productos:</label>
+        <div style="display: flex; flex-direction: row;">
+          <select name="Pr" class="form-select" id="Pr" required="1" aria-label="Default select example" style="width: 50%; align-self: center; margin-right: 1%">
+            {% for k in bdp %}
+            <option value="{{k.key()}}">{{k.val()['Descripcion']}}</option>
+            {%endfor%}
+          </select>
+          <label class="form-label" style="font-size: 5mm; align-self: center; margin-left: 1%; margin-right: 1%;">Cantidad:</label>
+          <input type="text" name="c" class="form-control" id="c" style="width: 30%; " required="1" type="number" step="1" pattern="^[1-9]\d*$">
+          <button class="btn btn-dark"  onclick="$('#Cliente').removeAttr('required'), add(1)" id="agr" style="margin-left: 1%;">Agregar</button>
+        </div>
+      </div>
+      <table class="table table-dark" style="opacity: 80%; font-size: 70%;">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for t in a%}
+          <tr>
+            <th>{{t}}</th>
+            {% for b in bdp %}
+            {% if b.key() == t%}
+            <td>{{b.val()['Descripcion']}}</td>
+            <td>{{b.val()['Precio']}}</td>
+            {%endif%}
+            {%endfor%}
+            <td>{{a.get(t)}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    
+    <div class= "formulario"style="display: flex; flex-direction: column; font-size: 7mm;">
+      <div class="mb-3">
+        <label for="Vendedor" class="form-label">Vendedor</label>
+        <input name="Vendedor" class="form-control" id="Vendedor" value="{{session['name']}}" readonly> 
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Cliente (CI):</label>
+        <select name="Cliente" id="Cliente" class="form-select" required="1" aria-label="Default select example" style="width: 50%; align-self: center;">
+          {% for t in c %}
+          <option value="{{t.val()['CI']}}">{{t.val()['CI']}}</option>
+          {%endfor%}
+        </select>
+      </div>
+      <div class="p" style="display: flex; flex-direction: column;">
+        <label for="n" class="form-label">Cliente nuevo:</label>
+        <a class="btn btn-dark" onclick="agregar('{{n}}')" id="n" style="margin-right: auto;">Agregar</a>
+      </div>
+    </div>
+    <div style="margin-left: 34%; margin-right: auto; margin-top: 4%; width: 50%;">
+      <button onclick="$('#Cliente').removeAttr('required'), $('#Pr').removeAttr('required'),$('#c').removeAttr('required') ,add(3)" class="btn btn-primary" id="n" style="margin-right: auto;">Limpiar</button>
+      <button onclick="$('#Cliente').prop('required', true), $('#Pr').removeAttr('required'),$('#c').removeAttr('required') ,add(2)" type="submit" class="btn btn-primary" id="gf" style="margin-left: 30%; margin-right: auto;">Generar factura</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal fade" id="cliente" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="titulo">Neurus Robotics</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="" method="POST" style="font-size: 20px;" id="formcl">                                               
+                  <div class="mb-3">
+                      <label for="Id" class="form-label">Id</label>
+                      <input id="Id" name="Id" class="form-control" required="1">
+                  </div>
+                  <div class="mb-3">
+                      <label for="CI" class="form-label">CI/NIT</label>
+                      <input id="CI" name="CI" class="form-control" required="1">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Nombre" class="form-label">Nombre</label>
+                      <input id="Nombre" name="Nombre" class="form-control" required="1">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Contacto" class="form-label">Contacto (email, cel, etc)</label>
+                      <input id="Contacto"  name="Contacto" class="form-control">
+                      <label for="Contacto" class="form-label" style="color: lightslategray;">Campo no obligatorio</label>
+                  </div>
+                  <div style="display: flex; justify-content: space-around;">
+                      <button type="btn" class="btno" data-bs-dismiss="modal">Cancelar</button>
+                      <button id="boton" onclick="$('#Id').prop('disabled', false);" type="submit" name="boton" class="btno"></button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock%}

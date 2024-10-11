@@ -1,0 +1,288 @@
+{% extends "Formato.html" %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">    
+    function agregar(n){
+        $("#Id").prop("disabled",true);
+        $("#Nombre").prop("disabled",false);
+        $("#CI").prop("disabled",false);               
+        $("#pu").prop("disabled",false);
+        $("#Usuario").prop("disabled",false);
+        $("#Contraseña").prop("disabled",false);    
+        //inicializa los datos en la vista forma modal
+        $("#Id").val(n)
+        $("#Nombre").val('')
+        $("#CI").val('')
+        $("#pu").val('')
+        $("#Usuario").val('')
+        $("#Contraseña").val('')                
+        //cambio los datos del boton y el titulo
+        $("#boton").html('Registrar');
+        $("#titulo").html('Registrar usuario');
+        //cambia la url del action
+        $("#form").attr('action','{{url_for("AgregarEditarUsuario")}}');
+        $("#abm").modal('show')
+    }
+    function actualizar(id,nom,ci,pu,us,pas){
+        $("#Id").prop("disabled",true);
+        $("#Nombre").prop("disabled",false);
+        $("#CI").prop("disabled",false);               
+        $("#pu").prop("disabled",false);
+        $("#Usuario").prop("disabled",false);
+        $("#Contraseña").prop("disabled",false);
+
+        $("#Id").val(id)
+        $("#Nombre").val(nom)
+        $("#CI").val(ci)
+        $("#pu").val(pu)
+        $("#Usuario").val(us)
+        $("#Contraseña").val(pas)
+
+        $("#boton").html('Editar');
+        $("#titulo").html('Editar usuario');
+
+        $("#form").attr('action','{{url_for("AgregarEditarUsuario")}}');
+        $("#abm").modal('show')
+    }
+    function eliminar(id,nom,ci,pu,us,pas){
+        $("#Id").prop("disabled",true);
+        $("#Nombre").prop("disabled",true);
+        $("#CI").prop("disabled",true);               
+        $("#pu").prop("disabled",true);
+        $("#Usuario").prop("disabled",true);
+        $("#Contraseña").prop("disabled",true);
+
+        $("#Id").val(id)
+        $("#Nombre").val(nom)
+        $("#CI").val(ci)
+        $("#pu").val(pu)
+        $("#Usuario").val(us)
+        $("#Contraseña").val(pas)
+
+        $("#boton").html('Eliminar');
+        $("#titulo").html('Eliminar usuario');
+
+        $("#form").attr('action','{{url_for("EliminarUsuario")}}');
+        $("#abm").modal('show')
+    }
+</script>
+
+<h1 style="margin: 1%;">Lista de usuarios</h1>  
+<div class="container" style="width: 90%;">
+    
+    <div style="display: flex; flex-direction: row; margin-bottom: 1%;">
+        <form action="/Usuarios/BuscarUsuario" method="POST" style="display: flex; flex-direction: row; width: 40%;">
+            <label for="nom" style="font-size: 7mm; margin-right: 1%;">Usuario:</label>
+            <input name="nom" class="form-control" style="width: 50%; align-self: center; margin-right: 1%">
+            <button type="submit" class="btn btn-primary" style="align-self: center;">Buscar</button>
+        </form>
+        <a class="btn btn-dark" href="{{url_for('ImprimirU')}}" style="margin-left: auto;">Imprimir</a> 
+    </div>
+
+    <table class="table table-sm table-dark table-hover table-striped">
+        <tbody>
+        {% for t in data %}
+        {% if b != 0  %}
+        <tr>    
+            <td style="font-size: 6mm;">{{t.key()}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <table class="table mb-0" style="background-color: rgba(255, 211, 175, 0.76); color: black;">
+                    <thead>
+                        <th>Nombre</th>
+                        <th>CI</th>
+                        {% if t.key() == 'Administracion' %}
+                        <th>Nivel</th>
+                        {% elif t.key() == 'Almacenes' %}
+                        <th>Turno</th>
+                        {% elif t.key() == 'Ventas' %}
+                        <th>Comision</th>
+                        {%endif%}
+                        <th>Usuario</th>
+                        <th>Contraseña</th>
+                        <th>Operación</th>
+                    </thead>
+                    <body>
+                    {% for x in adm %}
+                    {% if x.key() == b and t.key() == adm.key() %}
+                    <tr>
+                        <td>{{x.key()}}</td>
+                        <td>{{x.val()['CI']}}</td>
+                        <td>{{x.val()['Nivel']}}</td>
+                        <td>{{x.val()['Usuario']}}</td>
+                        <td>{{x.val()['Contraseña']}}</td>
+                        <td>
+                            <a class="btn btn-primary" onclick="$('#pul').html('Nivel'); actualizar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Nivel}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Editar</a>
+                            <a class="btn btn-danger" onclick="$('#pul').html('Nivel'); eliminar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Nivel}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Eliminar</a>
+                            <a class="btn btn-info" href="{{url_for('Usuarios')}}">Volver</a>
+                        </td>
+                    </tr>
+                    {%endif%}
+                    {%endfor%}
+                    {% for x in vnt %}
+                    {% if x.key() == b  and t.key() == vnt.key()%}
+                    <tr>
+                        <td>{{x.key()}}</td>
+                        <td>{{x.val()['CI']}}</td>
+                        <td>{{x.val()['Comision']}}</td>
+                        <td>{{x.val()['Usuario']}}</td>
+                        <td>{{x.val()['Contraseña']}}</td>
+                        <td>
+                            <a class="btn btn-primary" onclick="$('#pul').html('Comisión'); actualizar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Comision}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Editar</a>
+                            <a class="btn btn-danger" onclick="$('#pul').html('Comisión'); eliminar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Comision}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Eliminar</a>
+                            <a class="btn btn-info" href="{{url_for('Usuarios')}}">Volver</a>
+                        </td>
+                    </tr>
+                    {%endif%}
+                    {%endfor%}
+                    {% for x in eal %}
+                    {% if x.key() == b  and t.key() == eal.key()%}
+                    <tr>
+                        <td>{{x.key()}}</td>
+                        <td>{{x.val()['CI']}}</td>
+                        <td>{{x.val()['Turno']}}</td>
+                        <td>{{x.val()['Usuario']}}</td>
+                        <td>{{x.val()['Contraseña']}}</td>
+                        <td>
+                            <a class="btn btn-primary" onclick="$('#pul').html('Turno'); actualizar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Turno}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Editar</a>
+                            <a class="btn btn-danger" onclick="$('#pul').html('Turno'); eliminar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Turno}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Eliminar</a>
+                            <a class="btn btn-info" href="{{url_for('Usuarios')}}">Volver</a>
+                        </td>
+                    </tr>
+                    {%endif%}
+                    {%endfor%}
+                    </body>
+                </table>
+            </td>
+        </tr>
+        {% endif%}
+        {% if t.key() != 0 and b == 0 %}
+        <tr>
+            <td style="font-size: 6mm;">{{t.key()}}</td>
+            <td>
+                {% if t.key() == 'Administracion' %}
+                <a class="btn btn-primary" onclick="$('#pul').html('Nivel (1 o 2)'); agregar('{{t.key()}}')" style="float: right;">Agregar</a>
+                {% elif t.key() == 'Ventas'%}
+                <a class="btn btn-primary" onclick="$('#pul').html('Comisión'); agregar('{{t.key()}}')" style="float: right;">Agregar</a>
+                {% elif t.key() == 'Almacenes'%}
+                <a class="btn btn-primary" onclick="$('#pul').html('Turno'); agregar('{{t.key()}}')" style="float: right;">Agregar</a>
+                {%endif%}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <table class="table mb-0" style="background-color: rgba(255, 211, 175, 0.76); color: black;">
+                    <thead>
+                        <th>Nombre</th>
+                        <th>CI</th>
+                        {% if t.key() == 'Administracion' %}
+                        <th>Nivel</th>
+                        {% elif t.key() == 'Almacenes' %}
+                        <th>Turno</th>
+                        {% elif t.key() == 'Ventas' %}
+                        <th>Comision</th>
+                        {%endif%}
+                        <th>Usuario</th>
+                        <th>Contraseña</th>
+                        <th>Operación</th>
+                    </thead>
+                    {% if t.key() == adm.key() %}
+                    {% for x in adm %}
+                    <tr>
+                        <td>{{x.key()}}</td>
+                        <td>{{x.val()['CI']}}</td>
+                        <td>{{x.val()['Nivel']}}</td>
+                        <td>{{x.val()['Usuario']}}</td>
+                        <td>{{x.val()['Contraseña']}}</td>
+                        <td>
+                            <a class="btn btn-primary" onclick="$('#pul').html('Nivel (1 o 2)'); actualizar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Nivel}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Editar</a>
+                            <a class="btn btn-danger" onclick="$('#pul').html('Nivel'); eliminar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Nivel}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Eliminar</a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                    {% elif t.key() == vnt.key() %}
+                    {% for x in vnt %}
+                    <tr>
+                        <td>{{x.key()}}</td>
+                        <td>{{x.val()['CI']}}</td>
+                        <td>{{x.val()['Comision']}}</td>
+                        <td>{{x.val()['Usuario']}}</td>
+                        <td>{{x.val()['Contraseña']}}</td>
+                        <td>
+                            <a class="btn btn-primary" onclick="$('#pul').html('Comisión'); actualizar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Comision}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Editar</a>
+                            <a class="btn btn-danger" onclick="$('#pul').html('Comisión'); eliminar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Comision}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Eliminar</a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                    {% elif t.key() == eal.key() %}
+                    {% for x in eal %}
+                    <tr>
+                        <td>{{x.key()}}</td>
+                        <td>{{x.val()['CI']}}</td>
+                        <td>{{x.val()['Turno']}}</td>
+                        <td>{{x.val()['Usuario']}}</td>
+                        <td>{{x.val()['Contraseña']}}</td>
+                        <td>
+                            <a class="btn btn-primary" onclick="$('#pul').html('Turno'); actualizar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Turno}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Editar</a>
+                            <a class="btn btn-danger" onclick="$('#pul').html('Turno'); eliminar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Turno}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Eliminar</a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                    {%endif%}
+                </table>
+            </td>
+        </tr>
+        {%endif%}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+    <!-- Modal -->
+<div class="modal fade" id="abm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titulo">Neurus Robotics</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST" style="font-size: 20px;" id="form">                                               
+                    <div class="mb-3">
+                        <label for="Id" class="form-label">División</label>
+                        <input id="Id" name="Id" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Nombre" class="form-label">Nombre</label>
+                        <input id="Nombre" name="Nombre" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="CI" class="form-label">CI</label>
+                        <input id="CI" name="CI" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pu" id="pul" class="form-label"></label>
+                        <input id="pu"  name="pu" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Usuario" class="form-label">Usuario</label>
+                        <input id="Usuario"  name="Usuario" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Contraseña" class="form-label">Contraseña</label>
+                        <input id="Contraseña"  name="Contraseña" class="form-control">
+                    </div>
+                    <div style="display: flex; justify-content: space-around;">
+                        <button type="btn" class="btno" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="boton" onclick="$('#Id').prop('disabled', false); $('#Nombre').prop('disabled', false);" type="submit" name="boton" class="btno"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

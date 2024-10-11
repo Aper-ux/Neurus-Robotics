@@ -1,0 +1,187 @@
+{% extends "Formato.html" %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">    
+    function agregar(n){
+        $("#Id").prop("disabled",true);
+        $("#CI").prop("disabled",false);    
+        $("#Nombre").prop("disabled",false);              
+        $("#Contacto").prop("disabled",false);  
+
+        //inicializa los datos en la vista forma modal
+        $("#Id").val(n)
+        $("#CI").val('')
+        $("#Nombre").val('')
+        $("#Contacto").val('')    
+       
+        //cambio los datos del boton y el titulo
+        $("#boton").html('Registrar');
+        $("#titulo").html('Registrar cliente');
+        //cambia la url del action
+        $("#form").attr('action','{{url_for("AgregarCliente")}}');  
+        $("#abm").modal('show')
+    }
+    function actualizar(id,ci,nom,con){
+        $("#Id").prop("disabled", true);
+        $("#CI").prop("disabled", false);
+        $("#Nombre").prop("disabled", false);
+        $("#Contacto").prop("disabled", false);
+
+        $("#Id").val(id)
+        $("#CI").val(ci)
+        $("#Nombre").val(nom)
+        $("#Contacto").val(con)
+
+        $("#boton").html('Editar');
+        $("#titulo").html('Editar cliente');
+
+        $("#form").attr('action','{{url_for("EditarCliente")}}');  
+        $("#abm").modal('show')
+    }
+    function eliminar(id,ci,nom,con){
+        $("#Id").prop("disabled", true);
+        $("#CI").prop("disabled", true);
+        $("#Nombre").prop("disabled", true);
+        $("#Contacto").prop("disabled", true);
+
+        $("#Id").val(id)
+        $("#CI").val(ci)
+        $("#Nombre").val(nom)
+        $("#Contacto").val(con)
+
+        $("#boton").html('Eliminar');
+        $("#titulo").html('Eliminar cliente');
+
+        $("#form").attr('action','{{url_for("EliminarCliente")}}');
+        $("#abm").modal('show')
+    }
+</script>
+
+{%if j == 1 %}
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('#mod').modal('show');
+        });
+    </script>
+{%endif%}
+
+<h1 style="margin: 1%;">Lista de clientes</h1>  
+<div class="container" style="width: 90%;">
+    
+    <div style="display: flex; flex-direction: row; margin-bottom: 1%;">
+        <form action="/Clientes/BuscarCliente" method="POST" style="display: flex; flex-direction: row; width: 40%;">
+            <label for="c" style="font-size: 7mm; margin-right: 1%;">CI:</label>
+            <input name="c" class="form-control" style="width: 50%; align-self: center; margin-right: 1%">
+            <button type="submit" class="btn btn-primary" style="align-self: center;">Buscar</button>
+        </form>
+        <a class="btn btn-dark" href="{{url_for('ImprimirC')}}" style="margin-left: auto;">Imprimir</a>
+        {% if session['div'] == 'Ventas'  or session['div'] == 'Administracion' %}
+        <button type="button" class="btn btn-primary" onclick="agregar('{{n}}')" style=" margin-left: 1%;">Registrar cliente</button>  
+        {%endif%}  
+    </div>
+
+    <table class="table table-sm table-dark table-hover">
+        <thead>
+            <tr class="table-active">
+                <th>#</th>
+                <th>CI/NIT</th>
+                <th>Nombre</th>
+                <th>Contacto</th>
+                {% if session['div'] == 'Ventas' or b != 0  or session['div'] == 'Administracion' %}
+                <th>Operación</th>
+                {%endif%}  
+            </tr>
+        </thead>
+        <tbody>
+        {% for t in data%}
+        {%if b == t.key()%}
+            <tr>    
+                <td>{{t.key()}}</td>
+                <td>{{t.val()['CI']}}</td>
+                <td>{{t.val()['Nombre']}}</td>
+                <td>{{t.val()['Contacto']}}</td>
+                <td>
+                    {% if session['div'] == 'Ventas' or session['div'] == 'Administracion' %}
+                    <a class="btn btn-outline-warning" onclick="actualizar('{{t.key()}}','{{t.val().CI}}','{{t.val().Nombre}}','{{t.val().Contacto}}')">Editar</a>
+                    <a class="btn btn-outline-danger" onclick="eliminar('{{t.key()}}','{{t.val().CI}}','{{t.val().Nombre}}','{{t.val().Contacto}}')">Eliminar</a>
+                    {%endif%}
+                    <a class="btn btn-outline-info" href="{{url_for('Clientes')}}">Volver</a>
+                </td>
+            </tr>
+        {% endif%}
+        {% if t.key() != 0 and b == 0%}
+        <tr>
+            <td>{{t.key()}}</td>
+            <td>{{t.val()['CI']}}</td>
+            <td>{{t.val()['Nombre']}}</td>
+            <td>{{t.val()['Contacto']}}</td>
+            {% if session['div'] == 'Ventas' or session['div'] == 'Administracion'%}
+            <td>
+                <a class="btn btn-outline-warning" onclick="actualizar('{{t.key()}}','{{t.val().CI}}','{{t.val().Nombre}}','{{t.val().Contacto}}')">Editar</a>
+                <a class="btn btn-outline-danger" onclick="eliminar('{{t.key()}}','{{t.val().CI}}','{{t.val().Nombre}}','{{t.val().Contacto}}')">Eliminar</a>
+            </td>
+            {%endif%}
+        </tr>
+        {%endif%}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+    <!-- Modal -->
+<div class="modal fade" id="abm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titulo">Neurus Robotics</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST" style="font-size: 20px;" id="form">                                               
+                    <div class="mb-3">
+                        <label for="Id" class="form-label">Id</label>
+                        <input id="Id" name="Id" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="CI" class="form-label">CI/NIT</label>
+                        <input id="CI" name="CI" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Nombre" class="form-label">Nombre</label>
+                        <input id="Nombre" name="Nombre" class="form-control" required="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Contacto" class="form-label">Contacto (email, cel, etc)</label>
+                        <input id="Contacto"  name="Contacto" class="form-control">
+                        <label for="Contacto" class="form-label" style="color: lightslategray;">Campo no obligatorio</label>
+                    </div>
+                    <div style="display: flex; justify-content: space-around;">
+                        <button type="btn" class="btno" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="boton" onclick="$('#Id').prop('disabled', false);" type="submit" name="boton" class="btno"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="mod" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: black; color: lavender;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+           CI repetido
+        </div>
+        <div class="modal-footer">
+            <a type="button" class="btn btn-outline-info" href="{{url_for('Clientes')}}" >Volver</a>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock%}

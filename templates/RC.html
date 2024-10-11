@@ -1,0 +1,195 @@
+{% extends "Formato.html" %}
+
+{% block content %}
+<script type="text/javascript">
+    function busqueda(i){
+        if (i==1){
+          $("#bus").attr('action','{{url_for("BFC")}}');
+        }
+        if (i==2){
+          $("#bus").attr('action','{{url_for("BMC")}}');
+        } 
+    }
+</script>
+
+{%if a != 0 and p1 !=0 %}
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('#det').modal('show');
+        });
+    </script>
+{%endif%}
+
+<h1 style="margin: 1%;">Reporte de compras</h1>  
+
+<div class="container" style="width: 90%;">
+    
+    <div style="display: flex; flex-direction: row; margin-bottom: 1%; height: auto;">
+        <form action="" method="POST" id="bus" style="display: flex; flex-direction: row; width: 55%;">
+            <label for="fecha" style="font-size: 7mm; margin-right: 1%;">Fecha:</label>
+            <input name="fecha" class="form-control" type="date" name="fecha"  min="2021-03-01" max="2025-05-25" style="width: 50%; align-self: center; margin-right: 1%">
+            <button type="submit" onclick="busqueda(1)" class="btn busqueda"></button>
+            <label for="mes" style="font-size: 7mm; margin-right: 1%; margin-left: 1%;">Mes:</label>
+            <select name="mes" class="form-select" aria-label="Default select example" style="width: 50%; align-self: center; margin-right: 1%">
+                <option value="01">Enero</option>
+                <option value="02">Febrero</option>
+                <option value="03">Marzo</option>
+                <option value="04">Abril</option>
+                <option value="05">Mayo</option>
+                <option value="06">Junio</option>
+                <option value="07">Julio</option>
+                <option value="08">Agosto</option>
+                <option value="09">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+            <button type="submit" onclick="busqueda(2)" class="btn busqueda"></button>
+        </form>
+        <a class="btn btn-dark" href="{{url_for('ImprimirComp')}}" style="margin-left: auto;">Imprimir</a>
+        <a class="btn btn-dark" href="{{url_for('Reportec')}}" style="margin-left: 1%;">Estadisticas</a>
+        {% if session['div'] == 'Almacenes' or session['div'] == 'Administracion' %}
+        <a type="button"  href="{{url_for('Compras')}}" class="btn btn-primary" style=" margin-left: 1%;">Registrar compra</a>  
+        {%endif%}  
+    </div>
+
+    <table class="table table-sm table-dark table-hover">
+        <thead>
+            <tr class="table-active">
+                <th>#</th>
+                <th>Proveedor</th>
+                <th>Total</th>
+                <th>Encargado</th>
+                <th>Fecha</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% if b != 0 and m==0 %}
+        {% for t in data %}
+        {% if b == t.val()['Fecha'] %}
+        <tr>
+            <td>{{t.key()}}</td>
+            {%for j in p%}
+            {%if j.key() == t.val()['Proveedor']%}
+            <td>{{j.val()['Nombre']}}</td>
+            {%endif%}
+            {%endfor%}
+            <td>{{t.val()['Total']}}</td>
+            <td>{{t.val()['Encargado']}}</td>
+            <td>{{t.val()['Fecha']}}</td>
+            <td>
+              <form action= "/Compras/RC/Detallec" method="POST">
+                <button class="btn btn-outline-info">Detalles</button>
+                <input name="bbb" style="display:none;" value="{{t.key()}}"></input>
+              </form>
+              <a class="btn btn-outline-info" href="{{url_for('RC')}}">Volver</a>    
+            </td>
+        </tr>
+        {%endif%}
+        {%endfor%}
+        {% elif b==0 and m!=0 %}
+        {% for t in data %}
+        {% set f = t.val()['Fecha'].split('-') %}
+        {%if m == f[1]%}
+        <tr>
+            <td>{{t.key()}}</td>
+            {%for j in p%}
+            {%if j.key() == t.val()['Proveedor']%}
+            <td>{{j.val()['Nombre']}}</td>
+            {%endif%}
+            {%endfor%}
+            <td>{{t.val()['Total']}}</td>
+            <td>{{t.val()['Encargado']}}</td>
+            <td>{{t.val()['Fecha']}}</td>
+            <td>
+              <form action= "/Compras/RC/Detallec" method="POST">
+                <button class="btn btn-outline-info">Detalles</button>
+                <input name="bbb" style="display:none;" value="{{t.key()}}"></input>
+              </form>
+              <a class="btn btn-outline-info" href="{{url_for('RC')}}">Volver</a> 
+            </td>
+        </tr>
+        {%endif%}
+        {%endfor%}
+        {% elif b==0 and m==0%}
+        {% for t in data %}
+        <tr>
+            <td>{{t.key()}}</td>
+            {%for j in p%}
+            {%if j.key() == t.val()['Proveedor']%}
+            <td>{{j.val()['Nombre']}}</td>
+            {%endif%}
+            {%endfor%}
+            <td>{{t.val()['Total']}}</td>
+            <td>{{t.val()['Encargado']}}</td>
+            <td>{{t.val()['Fecha']}}</td>
+            <td>
+                <form action= "/Compras/RC/Detallec" method="POST">
+                    <button class="btn btn-outline-info">Detalles</button>
+                    <input name="bbb" style="display:none;" value="{{t.key()}}"></input>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        {%endif%}
+        </tbody>
+    </table>
+<div>
+
+<!-- Modal -->
+<div class="modal fade" id="det" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content" style="background-color: black; color: lavender;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles de venta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            {%if a != 0 and p1 !=0 %}
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Detalle</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for t in a %}
+                  {% set j= loop.index%}
+                  <tr>
+                    {% for b in p1 %}
+                    {% if b.key() == t.replace("]","").replace("[","").replace("'","").replace(" ","") %}
+                    <th>{{b.key()}}</th>
+                    <td>{{b.val()['Descripcion']}}</td>
+                    <td>
+                    {% for k in precios %}
+                    {% if loop.index == j %}
+                    {{k.replace("]","").replace("[","").replace("'","")}}
+                    {%endif%}
+                    {%endfor%}
+                    </td>                    
+                    {%endif%}
+                    {%endfor%}
+                    <td>{{a.get(t).replace("]","").replace("[","").replace("'","")}}</td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+              {%else%}
+              <h1>Hi</h1>
+              {%endif%}
+        </div>
+        <div class="modal-footer">
+          <form action= "/Compras/RC/EliminarCompra" method="POST">
+            <input name="bbbb" style="display:none;" value="{{bbb}}"></input>
+            <button class="btn btn-outline-danger">Eliminar</button>
+          </form>
+          <a type="button" class="btn btn-outline-info" href="{{url_for('RC')}}" >Volver</a>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock%}
