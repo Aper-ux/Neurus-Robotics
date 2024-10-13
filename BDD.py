@@ -3,7 +3,7 @@ import pyrebase
 class BDD:
     def __init__(self):
         self._firebaseConfig = {
-            "apiKey" : "AIzaSyDZU-roqQjopM7rZ2kTPYPkW2fMUphfAtk",
+            "apiKey" : "asdasdas",
             "authDomain" : "neurus-cd926.firebaseapp.com",
             "databaseURL" : "https://neurus-cd926-default-rtdb.firebaseio.com",
             "projectId" : "neurus-cd926",
