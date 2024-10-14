@@ -11,6 +11,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.enums import TA_LEFT, TA_RIGHT, TA_CENTER, TA_JUSTIFY
 from reportlab.lib.units import inch
 from reportlab.graphics.shapes import Drawing, Rect, String, Group, Line
+import hashlib
 
 from arrow import utcnow
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
@@ -66,6 +67,12 @@ def Login():
     pro.prc = []
     return render_template("Acceso.html")
 
+def verificar_contrasena(contrasena, salt, hash_almacenado):
+    hash_object = hashlib.sha256()
+    hash_object.update((salt + contrasena).encode('utf-8'))
+    hash_calculado = hash_object.hexdigest()
+    return hash_calculado == hash_almacenado
+
 @app.route('/Login/<error>', methods = ['POST'])
 def LoginE(error):
     return render_template("Acceso.html", error=error)
@@ -89,19 +96,20 @@ def Ingresar():
     Nombre = "0"
 
     for t in v.each():
-        if (t.val()['Usuario'] == us and t.val()['Contraseña'] == pas):
+        if (t.val()['Usuario'] == us and verificar_contrasena(pas, us, t.val()['Contraseña'])):
             Nombre = t.key()
             session['name'] = Nombre
             session['div'] = "Ventas"
+
             return redirect(url_for('Ventas'), code= 307)              
     for t in e.each():
-        if (t.val()['Usuario'] == us and t.val()['Contraseña'] == pas):
+        if (t.val()['Usuario'] == us and verificar_contrasena(pas, us, t.val()['Contraseña'])):
             Nombre = t.key()
             session['name'] = Nombre
             session['div'] = "Almacenes"
             return redirect(url_for('Productos'), code= 307)    
     for t in a.each():
-        if (t.val()['Usuario'] == us and t.val()['Contraseña'] == pas):
+        if (t.val()['Usuario'] == us and verificar_contrasena(pas, us, t.val()['Contraseña'])):
             Nombre = t.key()
             session['name'] = Nombre
             session['div'] = "Administracion"
@@ -116,7 +124,7 @@ def Ingresar():
 @app.route('/Desbloquear',methods = ['POST'])
 def Desbloquear():
     llave = request.form['llave']
-    if (llave == "111"):
+    if (llave == "hq(f>X3X9LQg4B9Qn2Z#"):
         i.i = 2
         return redirect('/')
     else:
@@ -815,6 +823,12 @@ def Usuarios():
         s = 0
     return render_template("Usuarios.html", data = d, adm = adm, vnt = vnt, eal = eal, b = 0, s = s, i=i)
 
+def encriptar_contrasena(contrasena, salt):
+    hash_object = hashlib.sha256()
+    hash_object.update((salt + contrasena).encode('utf-8'))
+    hash_hex = hash_object.hexdigest()
+    return hash_hex
+
 @app.route("/Usuarios/AgregarEditarUsuario", methods = ['POST'])
 def AgregarEditarUsuario():
     id = request.form['Id']
@@ -823,6 +837,10 @@ def AgregarEditarUsuario():
     pu = request.form['pu']
     u = request.form['Usuario']
     c = request.form['Contraseña']
+
+    c = encriptar_contrasena(c, u)
+    print("Contraseña:", c)
+
     if (id == 'Ventas'):
         usuario = Vendedor(ci,n,u,c,pu)
     if (id == 'Almacenes'):
