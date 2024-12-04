@@ -77,49 +77,92 @@ def verificar_contrasena(contrasena, salt, hash_almacenado):
 def LoginE(error):
     return render_template("Acceso.html", error=error)
 
-@app.route('/Ingresar',methods = ['POST'])
+@app.route('/Ingresar', methods=['POST'])
 def Ingresar():
-    c = BDD()
-    db = c.db()
+    try:
+        # Paso 1: Crear conexión con la base de datos
+        print("Estableciendo conexión con la base de datos...")
+        c = BDD()
+        db = c.db()
+        print("Conexión con la base de datos establecida.")
 
-    us = request.form['Usuario']
-    pas = request.form['Contraseña']
+        # Paso 2: Obtener datos del formulario
+        us = request.form.get('Usuario', None)
+        pas = request.form.get('Contraseña', None)
+        print(f"Usuario ingresado: {us}, Contraseña ingresada: {pas}")
 
-    if(i.i<3):
-        v = db.child("Usuarios").child("Ventas").get()
-        e = db.child("Usuarios").child("Almacenes").get()
-        a = db.child("Usuarios").child("Administracion").get()
-    else:
-        error = "error3"
-        return redirect(('/Login/'+ error), code= 307)
+        if not us or not pas:
+            print("Usuario o contraseña no proporcionados.")
+            error = "error"
+            return redirect(('/Login/' + error), code=307)
 
-    Nombre = "0"
+        # Paso 3: Validar intentos fallidos
+        if i.i < 3:
+            print("Obteniendo datos de 'Ventas', 'Almacenes' y 'Administracion'...")
+            v = db.child("Usuarios").child("Ventas").get()
+            e = db.child("Usuarios").child("Almacenes").get()
+            a = db.child("Usuarios").child("Administracion").get()
 
-    for t in v.each():
-        if (t.val()['Usuario'] == us and verificar_contrasena(pas, us, t.val()['Contraseña'])):
-            Nombre = t.key()
-            session['name'] = Nombre
-            session['div'] = "Ventas"
+            # Imprimir las consultas para debug
+            print("Datos de 'Ventas':", v)
+            print("Datos de 'Almacenes':", e)
+            print("Datos de 'Administracion':", a)
+        else:
+            error = "error3"
+            print("Máximo de intentos alcanzado.")
+            return redirect(('/Login/' + error), code=307)
 
-            return redirect(url_for('Ventas'), code= 307)              
-    for t in e.each():
-        if (t.val()['Usuario'] == us and verificar_contrasena(pas, us, t.val()['Contraseña'])):
-            Nombre = t.key()
-            session['name'] = Nombre
-            session['div'] = "Almacenes"
-            return redirect(url_for('Productos'), code= 307)    
-    for t in a.each():
-        if (t.val()['Usuario'] == us and verificar_contrasena(pas, us, t.val()['Contraseña'])):
-            Nombre = t.key()
-            session['name'] = Nombre
-            session['div'] = "Administracion"
-            return redirect(url_for('Usuarios'), code= 307)    
+        Nombre = "0"
 
-    if (Nombre=="0" and i.i<3):
-        i.i+=1
-        print(i.i)
+        # Paso 4: Iterar sobre los datos obtenidos
+        if v:
+            for t in v.each():
+                print("Procesando nodo de 'Ventas':", t.val())
+                datos = t.val()
+                if datos and 'Usuario' in datos and 'Contraseña' in datos:
+                    if datos['Usuario'] == us and verificar_contrasena(pas, us, datos['Contraseña']):
+                        Nombre = t.key()
+                        session['name'] = Nombre
+                        session['div'] = "Ventas"
+                        print("Inicio de sesión exitoso en 'Ventas'.")
+                        return redirect(url_for('Ventas'), code=307)
+
+        if e:
+            for t in e.each():
+                print("Procesando nodo de 'Almacenes':", t.val())
+                datos = t.val()
+                if datos and 'Usuario' in datos and 'Contraseña' in datos:
+                    if datos['Usuario'] == us and verificar_contrasena(pas, us, datos['Contraseña']):
+                        Nombre = t.key()
+                        session['name'] = Nombre
+                        session['div'] = "Almacenes"
+                        print("Inicio de sesión exitoso en 'Almacenes'.")
+                        return redirect(url_for('Productos'), code=307)
+
+        if a:
+            for t in a.each():
+                print("Procesando nodo de 'Administracion':", t.val())
+                datos = t.val()
+                if datos and 'Usuario' in datos and 'Contraseña' in datos:
+                    if datos['Usuario'] == us and verificar_contrasena(pas, us, datos['Contraseña']):
+                        Nombre = t.key()
+                        session['name'] = Nombre
+                        session['div'] = "Administracion"
+                        print("Inicio de sesión exitoso en 'Administracion'.")
+                        return redirect(url_for('Usuarios'), code=307)
+
+        # Paso 5: Si no se encontró usuario
+        if Nombre == "0" and i.i < 3:
+            i.i += 1
+            print(f"Intento fallido {i.i}. Usuario no encontrado.")
+            error = "error"
+            return redirect(('/Login/' + error), code=307)
+
+    except Exception as e:
+        # Capturar errores inesperados
+        print(f"Error en el proceso de inicio de sesión: {e}")
         error = "error"
-        return redirect(('/Login/'+ error), code= 307)
+        return redirect(('/Login/' + error), code=307)
 
 @app.route('/Desbloquear',methods = ['POST'])
 def Desbloquear():
