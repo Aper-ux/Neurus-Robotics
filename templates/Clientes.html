@@ -78,7 +78,7 @@
             <button type="submit" class="btn btn-primary" style="align-self: center;">Buscar</button>
         </form>
         <a class="btn btn-dark" href="{{url_for('ImprimirC')}}" style="margin-left: auto;">Imprimir</a>
-        {% if session['div'] == 'Ventas'  or session['div'] == 'Administracion' %}
+        {% if session['div'] == 'Ventas'  or session['div'] == 'root' %}
         <button type="button" class="btn btn-primary" onclick="agregar('{{n}}')" style=" margin-left: 1%;">Registrar cliente</button>  
         {%endif%}  
     </div>
@@ -90,7 +90,7 @@
                 <th>CI/NIT</th>
                 <th>Nombre</th>
                 <th>Contacto</th>
-                {% if session['div'] == 'Ventas' or b != 0  or session['div'] == 'Administracion' %}
+                {% if session['div'] == 'Ventas' or b != 0  or session['div'] == 'root' %}
                 <th>Operación</th>
                 {%endif%}  
             </tr>
@@ -104,7 +104,7 @@
                 <td>{{t.val()['Nombre']}}</td>
                 <td>{{t.val()['Contacto']}}</td>
                 <td>
-                    {% if session['div'] == 'Ventas' or session['div'] == 'Administracion' %}
+                    {% if session['div'] == 'Ventas' or session['div'] == 'root' %}
                     <a class="btn btn-outline-warning" onclick="actualizar('{{t.key()}}','{{t.val().CI}}','{{t.val().Nombre}}','{{t.val().Contacto}}')">Editar</a>
                     <a class="btn btn-outline-danger" onclick="eliminar('{{t.key()}}','{{t.val().CI}}','{{t.val().Nombre}}','{{t.val().Contacto}}')">Eliminar</a>
                     {%endif%}
@@ -118,7 +118,7 @@
             <td>{{t.val()['CI']}}</td>
             <td>{{t.val()['Nombre']}}</td>
             <td>{{t.val()['Contacto']}}</td>
-            {% if session['div'] == 'Ventas' or session['div'] == 'Administracion'%}
+            {% if session['div'] == 'Ventas' or session['div'] == 'root'%}
             <td>
                 <a class="btn btn-outline-warning" onclick="actualizar('{{t.key()}}','{{t.val().CI}}','{{t.val().Nombre}}','{{t.val().Contacto}}')">Editar</a>
                 <a class="btn btn-outline-danger" onclick="eliminar('{{t.key()}}','{{t.val().CI}}','{{t.val().Nombre}}','{{t.val().Contacto}}')">Eliminar</a>

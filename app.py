@@ -102,6 +102,7 @@ def Ingresar():
             v = db.child("Usuarios").child("Ventas").get()
             e = db.child("Usuarios").child("Almacenes").get()
             a = db.child("Usuarios").child("Administracion").get()
+            r = db.child("Usuarios").child("root").get()
 
             # Imprimir las consultas para debug
             print("Datos de 'Ventas':", v)
@@ -149,6 +150,18 @@ def Ingresar():
                         session['name'] = Nombre
                         session['div'] = "Administracion"
                         print("Inicio de sesión exitoso en 'Administracion'.")
+                        return redirect(url_for('Usuarios'), code=307)
+
+        if r:
+            for t in r.each():
+                print("Procesando nodo de 'Root':", t.val())
+                datos = t.val()
+                if datos and 'Usuario' in datos and 'Contraseña' in datos:
+                    if datos['Usuario'] == us and verificar_contrasena(pas, us, datos['Contraseña']):
+                        Nombre = t.key()
+                        session['name'] = Nombre
+                        session['div'] = "root"
+                        print("Inicio de sesión exitoso en 'Root'.")
                         return redirect(url_for('Usuarios'), code=307)
 
         # Paso 5: Si no se encontró usuario

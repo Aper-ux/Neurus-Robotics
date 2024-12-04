@@ -33,6 +33,26 @@
           $("#formi").attr('action','{{url_for("EditarInfo")}}');
           $("#info").modal('show')
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          document.getElementById('togglePassword').addEventListener('click', function () {
+              const passwordField = document.getElementById('llave');
+              if (passwordField.type === 'password') {
+                  passwordField.type = 'text';
+                  this.textContent = '🙈';
+              } else {
+                  passwordField.type = 'password';
+                  this.textContent = '👁️';
+              }
+          });
+      });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const inputElement = document.getElementById('llave');
+        if (inputElement) {
+            inputElement.value = 'hq(f>X3X9LQg4B9Qn2Z#';
+        }
+      });
     </script>
 </head>
 
@@ -80,6 +100,18 @@
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('Usuarios')}}" style="font-family: Montserrat; font-size: 5mm;">Usuarios</a>
                     <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('RV')}}" style="font-family: Montserrat; font-size: 4.5mm;">Reporte de Ventas</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('RC')}}" style="font-family: Montserrat; font-size: 4.5mm;">Reporte de Compras</a>  
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('Login')}}" style="font-family: Montserrat; font-size: 4.5mm;">Salir</a>
+                    </li>
+                    {%endif%}
+
+                    {% if session['div'] == 'root' %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('Usuarios')}}" style="font-family: Montserrat; font-size: 5mm;">Usuarios</a>
+                    <li class="nav-item">
                       <a class="nav-link" href="{{url_for('Ventas')}}" style="font-family: Montserrat; font-size: 5mm;">Venta</a>
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('Compras')}}" style="font-family: Montserrat; font-size: 5mm;">Compra</a>
@@ -98,8 +130,11 @@
                     </li>
                     {%endif%}
                 </ul>
-                {% if session['div'] == 'Administracion' %}
+                {% if session['div'] == 'Administracion' or session['div'] == 'root' %}
                 <a class="btn btn-dark" onclick = "info('{{i.val().Direccion}}','{{i.val().NIT}}','{{i.val().Telefono}}')" style="margin-left:auto; color: aliceblue; font-size: 4mm;">Acerca de</a>
+                {%endif%}
+                {% if session['div'] == 'root' %}
+                <a class="btn btn-secondary" onclick = "info('{{i.val().Direccion}}','{{i.val().NIT}}','{{i.val().Telefono}}')" style="margin-left:auto; color: aliceblue; font-size: 4mm;">Cambiar llave</a>
                 {%endif%}
             </div>
         </div>
@@ -124,7 +159,7 @@
     {% block content%}
     {% endblock%}
 
-{% if session['div'] == 'Administracion' %}
+{% if session['div'] == 'Administracion' or session['div'] == 'root' %}
 <!-- Info -->
 <div class="modal fade" id="info" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -136,20 +171,19 @@
           <div class="modal-body">
               <form action="" method="POST" style="font-size: 20px;" id="formi">                                               
                   <div class="mb-3">
-                      <label for="Direccioni" class="form-label">Direccion</label>
-                      <input id="Direccioni" name="Direccioni" class="form-control" required="1">
-                  </div>
-                  <div class="mb-3">
-                      <label for="NITi" class="form-label">NIT</label>
-                      <input id="NITi" name="NITi" class="form-control" required="1">
-                  </div>
-                  <div class="mb-3">
-                      <label for="Telefonoi" class="form-label">Telefono</label>
-                      <input id="Telefonoi" name="Telefonoi" class="form-control" required="1">
-                  </div>
+                      <label for="llave" class="form-label">¡¡Llave de desbloqueo!!</label>
+                      <div style="position: relative; display: inline-block;">
+                        <input id="llave" name="llave" class="form-control" 
+                               type="password" value="No interactivo" readonly 
+                               style="padding-right: 30px;">
+                        <button type="button" id="togglePassword" 
+                                style="position: absolute; right: 0; top: 0; background: none; border: none; cursor: pointer;">
+                          👁️
+                        </button>
+                      </div>
+                                        </div>
                   <div style="display: flex; justify-content: space-around;">
-                      <button type="btn" class="btno" data-bs-dismiss="modal">Cancelar</button>
-                      <button id="botoni" type="submit" name="botoni" class="btno"></button>
+                      <button type="btn" class="btno" data-bs-dismiss="modal">Cerrar</button>
                   </div>
               </form>
           </div>
