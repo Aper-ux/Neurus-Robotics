@@ -85,8 +85,8 @@
     <table class="table table-sm table-dark table-hover table-striped">
         <tbody>
         {% for t in data %}
-        {% if b != 0  %}
-        <tr>    
+        {% if t.key() != 'root' and b != 0 %}
+        <tr>
             <td style="font-size: 6mm;">{{t.key()}}</td>
         </tr>
         <tr>
@@ -101,12 +101,12 @@
                         <th>Turno</th>
                         {% elif t.key() == 'Ventas' %}
                         <th>Comision</th>
-                        {%endif%}
+                        {% endif %}
                         <th>Usuario</th>
                         <th>Contraseña</th>
                         <th>Operación</th>
                     </thead>
-                    <body>
+                    <tbody>
                     {% for x in adm %}
                     {% if x.key() == b and t.key() == adm.key() %}
                     <tr>
@@ -121,10 +121,10 @@
                             <a class="btn btn-info" href="{{url_for('Usuarios')}}">Volver</a>
                         </td>
                     </tr>
-                    {%endif%}
-                    {%endfor%}
+                    {% endif %}
+                    {% endfor %}
                     {% for x in vnt %}
-                    {% if x.key() == b  and t.key() == vnt.key()%}
+                    {% if x.key() == b and t.key() == vnt.key() %}
                     <tr>
                         <td>{{x.key()}}</td>
                         <td>{{x.val()['CI']}}</td>
@@ -137,10 +137,10 @@
                             <a class="btn btn-info" href="{{url_for('Usuarios')}}">Volver</a>
                         </td>
                     </tr>
-                    {%endif%}
-                    {%endfor%}
+                    {% endif %}
+                    {% endfor %}
                     {% for x in eal %}
-                    {% if x.key() == b  and t.key() == eal.key()%}
+                    {% if x.key() == b and t.key() == eal.key() %}
                     <tr>
                         <td>{{x.key()}}</td>
                         <td>{{x.val()['CI']}}</td>
@@ -153,24 +153,24 @@
                             <a class="btn btn-info" href="{{url_for('Usuarios')}}">Volver</a>
                         </td>
                     </tr>
-                    {%endif%}
-                    {%endfor%}
-                    </body>
+                    {% endif %}
+                    {% endfor %}
+                    </tbody>
                 </table>
             </td>
         </tr>
-        {% endif%}
-        {% if t.key() != 0 and b == 0 %}
+        {% endif %}
+        {% if t.key() != 'root' and t.key() != 0 and b == 0 %}
         <tr>
             <td style="font-size: 6mm;">{{t.key()}}</td>
             <td>
                 {% if t.key() == 'Administracion' %}
                 <a class="btn btn-primary" onclick="$('#pul').html('Nivel (1 o 2)'); agregar('{{t.key()}}')" style="float: right;">Agregar</a>
-                {% elif t.key() == 'Ventas'%}
+                {% elif t.key() == 'Ventas' %}
                 <a class="btn btn-primary" onclick="$('#pul').html('Comisión'); agregar('{{t.key()}}')" style="float: right;">Agregar</a>
-                {% elif t.key() == 'Almacenes'%}
+                {% elif t.key() == 'Almacenes' %}
                 <a class="btn btn-primary" onclick="$('#pul').html('Turno'); agregar('{{t.key()}}')" style="float: right;">Agregar</a>
-                {%endif%}
+                {% endif %}
             </td>
         </tr>
         <tr>
@@ -185,7 +185,7 @@
                         <th>Turno</th>
                         {% elif t.key() == 'Ventas' %}
                         <th>Comision</th>
-                        {%endif%}
+                        {% endif %}
                         <th>Usuario</th>
                         <!-- <th>Contraseña</th> -->
                         <th>Operación</th>
@@ -203,7 +203,7 @@
                             <a class="btn btn-danger" onclick="$('#pul').html('Nivel'); eliminar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Nivel}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Eliminar</a>
                         </td>
                     </tr>
-                    {%endfor%}
+                    {% endfor %}
                     {% elif t.key() == vnt.key() %}
                     {% for x in vnt %}
                     <tr>
@@ -217,7 +217,7 @@
                             <a class="btn btn-danger" onclick="$('#pul').html('Comisión'); eliminar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Comision}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Eliminar</a>
                         </td>
                     </tr>
-                    {%endfor%}
+                    {% endfor %}
                     {% elif t.key() == eal.key() %}
                     {% for x in eal %}
                     <tr>
@@ -231,15 +231,15 @@
                             <a class="btn btn-danger" onclick="$('#pul').html('Turno'); eliminar('{{t.key()}}','{{x.key()}}','{{x.val().CI}}','{{x.val().Turno}}','{{x.val().Usuario}}','{{x.val().Contraseña}}')">Eliminar</a>
                         </td>
                     </tr>
-                    {%endfor%}
-                    {%endif%}
+                    {% endfor %}
+                    {% endif %}
                 </table>
             </td>
         </tr>
-        {%endif%}
+        {% endif %}
         {% endfor %}
         </tbody>
-    </table>
+    </table>    
 </div>
 
     <!-- Modal -->
