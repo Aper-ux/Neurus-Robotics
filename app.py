@@ -13,6 +13,10 @@ from reportlab.lib.units import inch
 from reportlab.graphics.shapes import Drawing, Rect, String, Group, Line
 import hashlib
 
+import logging
+from datetime import datetime
+
+
 from arrow import utcnow
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch, mm
@@ -73,119 +77,153 @@ def verificar_contrasena(contrasena, salt, hash_almacenado):
     hash_calculado = hash_object.hexdigest()
     return hash_calculado == hash_almacenado
 
+# Configuración básica del logging
+logging.basicConfig(
+    filename="registro_logs.txt",  # Nombre del archivo
+    level=logging.INFO,            # Nivel mínimo de los mensajes que se registrarán
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Formato del mensaje
+    datefmt="%Y-%m-%d %H:%M:%S",   # Formato de la fecha y hora
+)
+
+# Ejemplo de funciones que generan logs
+def ejecutar_proceso():
+    try:
+        logging.info("Inicio del proceso.")
+        # Código que puede generar excepciones
+        resultado = 10 / 0  # Esto generará un error
+        logging.info(f"Resultado del proceso: {resultado}")
+    except ZeroDivisionError as e:
+        logging.error(f"Error en el proceso: {e}")
+    finally:
+        logging.info("Fin del proceso.")    
+
 @app.route('/Login/<error>', methods = ['POST'])
 def LoginE(error):
     return render_template("Acceso.html", error=error)
 
+def obtener_ruta_por_division(division, cambiar_contrasena=False):
+    """
+    Devuelve la ruta correspondiente según la división o contexto.
+    
+    Args:
+        division (str): La división del usuario (Ventas, Almacenes, Administracion).
+        cambiar_contrasena (bool): Indica si el usuario debe cambiar su contraseña.
+        
+    Returns:
+        str: La ruta correspondiente.
+    """
+    match division:
+        case "Ventas":
+            return url_for('CambiarContraseña') if cambiar_contrasena else url_for('Ventas')
+        case "Almacenes":
+            return url_for('CambiarContraseña') if cambiar_contrasena else url_for('Productos')
+        case "Administracion":
+            return url_for('CambiarContraseña') if cambiar_contrasena else url_for('Usuarios')
+        case _:
+            raise ValueError(f"División no reconocida: {division}")
+        
+def log_user_activity(usuario, area, exito=True):
+    """
+    Registra la actividad del usuario en un archivo de logs y en consola.
+    """
+    estado = "Inicio de sesión exitoso" if exito else "Intento de inicio de sesión fallido"
+    mensaje = f"{estado}: Usuario={usuario}, Área={area}"
+    print(mensaje)  # Mostrar en consola
+    logging.info(mensaje)  # Guardar en archivo de logs
+
+
+# Ruta del archivo donde se guardarán los registros
+user_logs_file = 'user_logs.txt'
+
+def guardar_registro(usuario, division, estado, ip, url):
+    """
+    Guarda un registro del inicio de sesión en el archivo de logs.
+    
+    Args:
+        usuario (str): Nombre del usuario.
+        division (str): División a la que pertenece (Ventas, Administración, etc.).
+        estado (str): Estado del inicio de sesión (Exitoso o Fallido).
+        ip (str): IP desde la que se realiza el intento de inicio de sesión.
+        url (str): URL completa de la solicitud.
+    """
+    with open(user_logs_file, 'a') as log_file:
+        fecha_hora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        log_file.write(f"{fecha_hora} - IP: {ip} - URL: {url} - Usuario: {usuario}, División: {division}, Estado: {estado}\n")
+
 @app.route('/Ingresar', methods=['POST'])
 def Ingresar():
     try:
-        # Paso 1: Crear conexión con la base de datos
+        # Conexión a la base de datos
         print("Estableciendo conexión con la base de datos...")
+        # Aquí vendría la lógica para conectar con tu base de datos
         c = BDD()
         db = c.db()
         print("Conexión con la base de datos establecida.")
 
-        # Paso 2: Obtener datos del formulario
+        # Obtención de datos del formulario
         us = request.form.get('Usuario', None)
         pas = request.form.get('Contraseña', None)
         print(f"Usuario ingresado: {us}, Contraseña ingresada: {pas}")
 
+        # Obtener la IP y la URL completa del cliente
+        ip_cliente = request.remote_addr
+        url_solicitud = request.url
+        print(f"IP del cliente: {ip_cliente}")
+        print(f"URL de la solicitud: {url_solicitud}")
+
         if not us or not pas:
             print("Usuario o contraseña no proporcionados.")
-            error = "error"
-            return redirect(('/Login/' + error), code=307)
+            guardar_registro(us, "Desconocido", "Fallido: Usuario o contraseña no proporcionados", ip_cliente, url_solicitud)
+            return redirect(('/Login/error'), code=307)
 
-        # Paso 3: Validar intentos fallidos
-        if i.i < 3:
-            print("Obteniendo datos de 'Ventas', 'Almacenes' y 'Administracion'...")
-            v = db.child("Usuarios").child("Ventas").get()
-            e = db.child("Usuarios").child("Almacenes").get()
-            a = db.child("Usuarios").child("Administracion").get()
-            r = db.child("Usuarios").child("root").get()
-
-            # Imprimir las consultas para debug
-            print("Datos de 'Ventas':", v)
-            print("Datos de 'Almacenes':", e)
-            print("Datos de 'Administracion':", a)
-        else:
-            error = "error3"
+        if i.i >= 3:
             print("Máximo de intentos alcanzado.")
-            return redirect(('/Login/' + error), code=307)
+            guardar_registro(us, "Desconocido", "Fallido: Máximo de intentos alcanzado", ip_cliente, url_solicitud)
+            return redirect(('/Login/error3'), code=307)
 
-        Nombre = "0"
+        # Divisiones de usuarios
+        print("Obteniendo datos de usuarios...")
+        divisiones = {
+            "Ventas": db.child("Usuarios").child("Ventas").get(),
+            "Almacenes": db.child("Usuarios").child("Almacenes").get(),
+            "Administracion": db.child("Usuarios").child("Administracion").get(),
+        }
 
-        # Paso 4: Iterar sobre los datos obtenidos
-        if v:
-            for t in v.each():
-                print("Procesando nodo de 'Ventas':", t.val())
-                datos = t.val()
-                if datos and 'Usuario' in datos and 'Contraseña' in datos:
-                    if datos['Usuario'] == us and verificar_contrasena(pas, us, datos['Contraseña']):
-                        Nombre = t.key()
-                        session['name'] = Nombre
-                        session['div'] = "Ventas"
-                        print("Inicio de sesión exitoso en 'Ventas'.")
-                        return redirect(url_for('Ventas'), code=307)
+        for division, datos in divisiones.items():
+            if datos:
+                for t in datos.each():
+                    usuario = t.val()
+                    print(f"Procesando nodo de '{division}': {usuario}")
 
-        if e:
-            for t in e.each():
-                print("Procesando nodo de 'Almacenes':", t.val())
-                datos = t.val()
-                if datos and 'Usuario' in datos and 'Contraseña' in datos:
-                    if datos['Usuario'] == us and verificar_contrasena(pas, us, datos['Contraseña']):
-                        Nombre = t.key()
-                        session['name'] = Nombre
-                        session['div'] = "Almacenes"
-                        print("Inicio de sesión exitoso en 'Almacenes'.")
-                        return redirect(url_for('Productos'), code=307)
+                    if usuario and usuario.get('Usuario') == us and verificar_contrasena(pas, us, usuario.get('Contraseña')):
+                        session['name'] = t.key()
+                        session['div'] = division
+                        print(f"Inicio de sesión exitoso en '{division}'.")
+                        guardar_registro(us, division, "Exitoso", ip_cliente, url_solicitud)
+                        return redirect(obtener_ruta_por_division(division), code=307)
 
-        if a:
-            for t in a.each():
-                print("Procesando nodo de 'Administracion':", t.val())
-                datos = t.val()
-                if datos and 'Usuario' in datos and 'Contraseña' in datos:
-                    if datos['Usuario'] == us and verificar_contrasena(pas, us, datos['Contraseña']):
-                        Nombre = t.key()
-                        session['name'] = Nombre
-                        session['div'] = "Administracion"
-                        print("Inicio de sesión exitoso en 'Administracion'.")
-                        return redirect(url_for('Usuarios'), code=307)
-
-        if r:
-            for t in r.each():
-                print("Procesando nodo de 'Root':", t.val())
-                datos = t.val()
-                if datos and 'Usuario' in datos and 'Contraseña' in datos:
-                    if datos['Usuario'] == us and verificar_contrasena(pas, us, datos['Contraseña']):
-                        Nombre = t.key()
-                        session['name'] = Nombre
-                        session['div'] = "root"
-                        print("Inicio de sesión exitoso en 'Root'.")
-                        return redirect(url_for('Usuarios'), code=307)
-
-        # Paso 5: Si no se encontró usuario
-        if Nombre == "0" and i.i < 3:
-            i.i += 1
-            print(f"Intento fallido {i.i}. Usuario no encontrado.")
-            error = "error"
-            return redirect(('/Login/' + error), code=307)
+        # Si no se encontró al usuario
+        i.i += 1
+        print(f"Intento fallido {i.i}. Usuario no encontrado.")
+        guardar_registro(us, "Desconocido", f"Fallido: Intento {i.i}", ip_cliente, url_solicitud)
+        return redirect(('/Login/error'), code=307)
 
     except Exception as e:
-        # Capturar errores inesperados
         print(f"Error en el proceso de inicio de sesión: {e}")
-        error = "error"
-        return redirect(('/Login/' + error), code=307)
+        guardar_registro("Error", "Sistema", f"Excepción: {str(e)}", request.remote_addr, request.url)
+        return redirect(('/Login/error'), code=307)
 
-@app.route('/Desbloquear',methods = ['POST'])
+
+@app.route('/Desbloquear', methods=['POST'])
 def Desbloquear():
     llave = request.form['llave']
-    if (llave == "hq(f>X3X9LQg4B9Qn2Z#"):
+    if llave == "hq(f>X3X9LQg4B9Qn2Z#":
         i.i = 2
         return redirect('/')
     else:
         error = "error3"
-        return redirect(('/Login/'+ error), code= 307)
+        return redirect(('/Login/' + error), code=307)
+
 
 # Venta
 @app.route("/Ventas", methods = ['POST','GET'])
@@ -1523,3 +1561,6 @@ def Reportev():
 if __name__ == "__main__":
     app.secret_key = "llave"
     app.run(debug = True)
+    logging.info("Inicio del programa.")
+    ejecutar_proceso()
+    logging.info("Fin del programa.")

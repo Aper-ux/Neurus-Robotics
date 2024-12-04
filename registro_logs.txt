@@ -1,0 +1,314 @@
+2024-12-04 19:06:11 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 19:06:11 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 19:06:11 - INFO -  * Restarting with stat
+2024-12-04 19:06:18 - WARNING -  * Debugger is active!
+2024-12-04 19:06:18 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:06:19 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:19] "GET / HTTP/1.1" 200 -
+2024-12-04 19:06:19 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:19] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:06:19 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:19] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:06:20 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:20] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:06:20 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:20] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:06:21 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:21] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:06:24 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:24] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:06:26 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:26] "POST /Usuarios HTTP/1.1" 200 -
+2024-12-04 19:06:26 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:26] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:06:27 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:27] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:06:27 - INFO - 127.0.0.1 - - [04/Dec/2024 19:06:27] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:07:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:07:05] "GET /Usuarios HTTP/1.1" 200 -
+2024-12-04 19:07:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:07:05] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:07:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:07:05] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:07:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:07:06] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:07:12 - INFO - 127.0.0.1 - - [04/Dec/2024 19:07:12] "[32mGET /Usuarios/Imprimir HTTP/1.1[0m" 302 -
+2024-12-04 19:07:13 - INFO - 127.0.0.1 - - [04/Dec/2024 19:07:13] "GET /Usuarios HTTP/1.1" 200 -
+2024-12-04 19:07:13 - INFO - 127.0.0.1 - - [04/Dec/2024 19:07:13] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:07:14 - INFO - 127.0.0.1 - - [04/Dec/2024 19:07:14] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:07:14 - INFO - 127.0.0.1 - - [04/Dec/2024 19:07:14] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:17:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:17:53] "GET / HTTP/1.1" 200 -
+2024-12-04 19:17:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:17:53] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:17:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:17:53] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:17:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:17:53] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:17:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:17:53] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:17:55 - INFO - 127.0.0.1 - - [04/Dec/2024 19:17:55] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:15 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:15] "GET /Usuarios HTTP/1.1" 200 -
+2024-12-04 19:18:15 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:15] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:18:15 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:15] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:18:15 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:15] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:22 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:22] "[32mPOST /Usuarios/AgregarEditarUsuario HTTP/1.1[0m" 302 -
+2024-12-04 19:18:23 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:23] "GET /Usuarios HTTP/1.1" 200 -
+2024-12-04 19:18:23 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:23] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:18:23 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:23] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:18:23 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:23] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:24 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:24] "GET / HTTP/1.1" 200 -
+2024-12-04 19:18:24 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:24] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:18:24 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:24] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:18:25 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:25] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:25 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:25] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:25 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:25] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:51 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:51] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:18:51 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:51] "POST /Login/error HTTP/1.1" 200 -
+2024-12-04 19:18:51 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:51] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:18:51 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:51] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:18:51 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:51] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:51 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:51] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:53] "GET / HTTP/1.1" 200 -
+2024-12-04 19:18:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:53] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:18:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:53] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:18:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:53] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:53] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:18:54 - INFO - 127.0.0.1 - - [04/Dec/2024 19:18:54] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:19:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:05] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:19:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:05] "POST /Login/error HTTP/1.1" 200 -
+2024-12-04 19:19:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:05] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:19:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:05] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:19:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:05] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:19:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:05] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:19:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:06] "GET / HTTP/1.1" 200 -
+2024-12-04 19:19:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:06] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:19:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:06] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:19:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:06] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:19:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:06] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:19:07 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:07] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:19:12 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:12] "GET /Usuarios HTTP/1.1" 200 -
+2024-12-04 19:19:12 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:12] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:19:12 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:12] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:19:12 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:12] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:19:18 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:18] "[32mPOST /Usuarios/AgregarEditarUsuario HTTP/1.1[0m" 302 -
+2024-12-04 19:19:19 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:19] "GET /Usuarios HTTP/1.1" 200 -
+2024-12-04 19:19:19 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:19] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:19:19 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:19] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:19:19 - INFO - 127.0.0.1 - - [04/Dec/2024 19:19:19] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:21:25 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:25] "GET / HTTP/1.1" 200 -
+2024-12-04 19:21:25 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:25] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:21:26 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:26] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:21:26 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:26] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:21:26 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:26] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:21:28 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:28] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:21:42 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:42] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:21:42 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:42] "POST /Ventas HTTP/1.1" 200 -
+2024-12-04 19:21:42 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:42] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:21:42 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:42] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:21:43 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:43] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:21:45 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:45] "GET / HTTP/1.1" 200 -
+2024-12-04 19:21:45 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:45] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:21:45 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:45] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:21:46 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:46] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:21:46 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:46] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:21:47 - INFO - 127.0.0.1 - - [04/Dec/2024 19:21:47] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:22:45 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:22:45 - INFO -  * Restarting with stat
+2024-12-04 19:22:48 - WARNING -  * Debugger is active!
+2024-12-04 19:22:48 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:22:53 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:22:54 - INFO -  * Restarting with stat
+2024-12-04 19:22:57 - WARNING -  * Debugger is active!
+2024-12-04 19:22:57 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:23:19 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:23:19 - INFO -  * Restarting with stat
+2024-12-04 19:23:22 - WARNING -  * Debugger is active!
+2024-12-04 19:23:22 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:23:35 - INFO - Inicio del programa.
+2024-12-04 19:23:35 - INFO - Inicio del proceso.
+2024-12-04 19:23:35 - ERROR - Error en el proceso: division by zero
+2024-12-04 19:23:35 - INFO - Fin del proceso.
+2024-12-04 19:23:35 - INFO - Fin del programa.
+2024-12-04 19:23:36 - INFO - Inicio del programa.
+2024-12-04 19:23:36 - INFO - Inicio del proceso.
+2024-12-04 19:23:36 - ERROR - Error en el proceso: division by zero
+2024-12-04 19:23:36 - INFO - Fin del proceso.
+2024-12-04 19:23:36 - INFO - Fin del programa.
+2024-12-04 19:23:45 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 19:23:45 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 19:23:45 - INFO -  * Restarting with stat
+2024-12-04 19:23:50 - WARNING -  * Debugger is active!
+2024-12-04 19:23:50 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:24:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:06] "GET / HTTP/1.1" 200 -
+2024-12-04 19:24:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:06] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:24:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:06] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:24:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:06] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:24:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:06] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:24:07 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:07] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:24:07 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:07] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:24:13 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:13] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:24:13 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:13] "POST /Ventas HTTP/1.1" 200 -
+2024-12-04 19:24:13 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:13] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:24:14 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:14] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:24:14 - INFO - 127.0.0.1 - - [04/Dec/2024 19:24:14] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:31:51 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:31:52 - INFO -  * Restarting with stat
+2024-12-04 19:31:57 - WARNING -  * Debugger is active!
+2024-12-04 19:31:57 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:32:04 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:32:04 - INFO -  * Restarting with stat
+2024-12-04 19:32:10 - WARNING -  * Debugger is active!
+2024-12-04 19:32:10 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:34:11 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:34:11 - INFO -  * Restarting with stat
+2024-12-04 19:34:15 - WARNING -  * Debugger is active!
+2024-12-04 19:34:15 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:34:19 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:34:19 - INFO -  * Restarting with stat
+2024-12-04 19:34:22 - WARNING -  * Debugger is active!
+2024-12-04 19:34:22 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:34:32 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:32] "GET / HTTP/1.1" 200 -
+2024-12-04 19:34:32 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:32] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:34:33 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:33] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:34:33 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:33] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:34:33 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:33] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:34:34 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:34] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:34:42 - INFO - Inicio de sesión exitoso: Usuario=alex.quiroga.perez@gmail.com, Área=Ventas
+2024-12-04 19:34:42 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:42] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:34:42 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:42] "POST /Ventas HTTP/1.1" 200 -
+2024-12-04 19:34:42 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:42] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:34:42 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:42] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:34:43 - INFO - 127.0.0.1 - - [04/Dec/2024 19:34:43] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:35:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:35:05] "GET / HTTP/1.1" 200 -
+2024-12-04 19:35:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:35:05] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:35:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:35:05] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:35:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:35:05] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:35:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:35:05] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:35:08 - INFO - 127.0.0.1 - - [04/Dec/2024 19:35:08] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:37:05 - INFO - Inicio de sesión exitoso: Usuario=alex.quiroga.perez@gmail.com, Área=Ventas
+2024-12-04 19:37:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:37:05] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:37:05 - INFO - 127.0.0.1 - - [04/Dec/2024 19:37:05] "POST /Ventas HTTP/1.1" 200 -
+2024-12-04 19:37:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:37:06] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:37:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:37:06] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:37:06 - INFO - 127.0.0.1 - - [04/Dec/2024 19:37:06] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:38:47 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:47] "GET / HTTP/1.1" 200 -
+2024-12-04 19:38:47 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:47] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:38:47 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:47] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:38:47 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:47] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:38:47 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:47] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:38:49 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:49] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:38:53 - INFO - Inicio de sesión exitoso: Usuario=alex.quiroga.perez@gmail.com, Área=Ventas
+2024-12-04 19:38:53 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:53] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:38:54 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:54] "POST /Ventas HTTP/1.1" 200 -
+2024-12-04 19:38:54 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:54] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:38:54 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:54] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:38:54 - INFO - 127.0.0.1 - - [04/Dec/2024 19:38:54] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:40:01 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:40:02 - INFO -  * Restarting with stat
+2024-12-04 19:40:05 - WARNING -  * Debugger is active!
+2024-12-04 19:40:05 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:40:14 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:40:14 - INFO -  * Restarting with stat
+2024-12-04 19:40:19 - WARNING -  * Debugger is active!
+2024-12-04 19:40:19 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:45:06 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:45:06 - INFO -  * Restarting with stat
+2024-12-04 19:45:10 - WARNING -  * Debugger is active!
+2024-12-04 19:45:10 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:45:12 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:45:12 - INFO -  * Restarting with stat
+2024-12-04 19:45:16 - WARNING -  * Debugger is active!
+2024-12-04 19:45:16 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:45:28 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:45:29 - INFO -  * Restarting with stat
+2024-12-04 19:45:33 - WARNING -  * Debugger is active!
+2024-12-04 19:45:33 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:47:22 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:47:23 - INFO -  * Restarting with stat
+2024-12-04 19:47:25 - INFO - Inicio del programa.
+2024-12-04 19:47:25 - INFO - Inicio del proceso.
+2024-12-04 19:47:25 - ERROR - Error en el proceso: division by zero
+2024-12-04 19:47:25 - INFO - Fin del proceso.
+2024-12-04 19:47:25 - INFO - Fin del programa.
+2024-12-04 19:47:32 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 19:47:32 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 19:47:32 - INFO -  * Restarting with stat
+2024-12-04 19:47:36 - WARNING -  * Debugger is active!
+2024-12-04 19:47:36 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:47:38 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:38] "GET / HTTP/1.1" 200 -
+2024-12-04 19:47:38 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:38] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:47:38 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:38] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:47:38 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:38] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:47:38 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:38] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:47:40 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:40] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:47:42 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:42] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:47:43 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:43] "POST /Ventas HTTP/1.1" 200 -
+2024-12-04 19:47:43 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:43] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:47:43 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:43] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:47:43 - INFO - 127.0.0.1 - - [04/Dec/2024 19:47:43] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:50:43 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:50:44 - INFO -  * Restarting with stat
+2024-12-04 19:50:48 - WARNING -  * Debugger is active!
+2024-12-04 19:50:48 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:50:49 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:50:49 - INFO -  * Restarting with stat
+2024-12-04 19:50:53 - WARNING -  * Debugger is active!
+2024-12-04 19:50:54 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:50:55 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:50:56 - INFO -  * Restarting with stat
+2024-12-04 19:50:59 - WARNING -  * Debugger is active!
+2024-12-04 19:50:59 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:51:00 - INFO - Inicio del programa.
+2024-12-04 19:51:00 - INFO - Inicio del proceso.
+2024-12-04 19:51:00 - ERROR - Error en el proceso: division by zero
+2024-12-04 19:51:00 - INFO - Fin del proceso.
+2024-12-04 19:51:00 - INFO - Fin del programa.
+2024-12-04 19:51:00 - INFO - Inicio del programa.
+2024-12-04 19:51:00 - INFO - Inicio del proceso.
+2024-12-04 19:51:00 - ERROR - Error en el proceso: division by zero
+2024-12-04 19:51:00 - INFO - Fin del proceso.
+2024-12-04 19:51:00 - INFO - Fin del programa.
+2024-12-04 19:51:07 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 19:51:07 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 19:51:07 - INFO -  * Restarting with stat
+2024-12-04 19:51:12 - WARNING -  * Debugger is active!
+2024-12-04 19:51:12 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:51:32 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:32] "GET / HTTP/1.1" 200 -
+2024-12-04 19:51:32 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:32] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:51:32 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:32] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:51:32 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:32] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:51:33 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:33] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:51:34 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:34] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:51:40 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:40] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:51:41 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:41] "POST /Ventas HTTP/1.1" 200 -
+2024-12-04 19:51:41 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:41] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:51:41 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:41] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:51:41 - INFO - 127.0.0.1 - - [04/Dec/2024 19:51:41] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:52:10 - INFO - 127.0.0.1 - - [04/Dec/2024 19:52:10] "GET / HTTP/1.1" 200 -
+2024-12-04 19:52:10 - INFO - 127.0.0.1 - - [04/Dec/2024 19:52:10] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:52:10 - INFO - 127.0.0.1 - - [04/Dec/2024 19:52:10] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 19:52:10 - INFO - 127.0.0.1 - - [04/Dec/2024 19:52:10] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:52:10 - INFO - 127.0.0.1 - - [04/Dec/2024 19:52:10] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:52:11 - INFO - 127.0.0.1 - - [04/Dec/2024 19:52:11] "[36mGET /static/Port.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:53:26 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:53:26 - INFO -  * Restarting with stat
+2024-12-04 19:53:30 - WARNING -  * Debugger is active!
+2024-12-04 19:53:30 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:53:33 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:53:33 - INFO -  * Restarting with stat
+2024-12-04 19:53:37 - WARNING -  * Debugger is active!
+2024-12-04 19:53:37 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:53:45 - INFO -  * Detected change in 'd:\\Universidad\\7mo\\Seguridad de Sistemas\\Proyecto\\Neurus Robotics\\Neurus Robotics\\app.py', reloading
+2024-12-04 19:53:45 - INFO -  * Restarting with stat
+2024-12-04 19:53:48 - INFO - Inicio del programa.
+2024-12-04 19:53:48 - INFO - Inicio del proceso.
+2024-12-04 19:53:48 - ERROR - Error en el proceso: division by zero
+2024-12-04 19:53:48 - INFO - Fin del proceso.
+2024-12-04 19:53:48 - INFO - Fin del programa.
+2024-12-04 19:53:51 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 19:53:51 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 19:53:51 - INFO -  * Restarting with stat
+2024-12-04 19:53:54 - WARNING -  * Debugger is active!
+2024-12-04 19:53:54 - INFO -  * Debugger PIN: 143-840-610
+2024-12-04 19:54:02 - INFO - 127.0.0.1 - - [04/Dec/2024 19:54:02] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 19:54:03 - INFO - 127.0.0.1 - - [04/Dec/2024 19:54:03] "POST /Ventas HTTP/1.1" 200 -
+2024-12-04 19:54:03 - INFO - 127.0.0.1 - - [04/Dec/2024 19:54:03] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 19:54:04 - INFO - 127.0.0.1 - - [04/Dec/2024 19:54:04] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 19:54:04 - INFO - 127.0.0.1 - - [04/Dec/2024 19:54:04] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 19:57:52 - INFO - Inicio del programa.
+2024-12-04 19:57:52 - INFO - Inicio del proceso.
+2024-12-04 19:57:52 - ERROR - Error en el proceso: division by zero
+2024-12-04 19:57:52 - INFO - Fin del proceso.
+2024-12-04 19:57:52 - INFO - Fin del programa.
+2024-12-04 19:57:52 - INFO - Inicio del programa.
+2024-12-04 19:57:52 - INFO - Inicio del proceso.
+2024-12-04 19:57:52 - ERROR - Error en el proceso: division by zero
+2024-12-04 19:57:52 - INFO - Fin del proceso.
+2024-12-04 19:57:52 - INFO - Fin del programa.

@@ -1,0 +1,1 @@
+2024-12-04 19:54:02 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: alex.quiroga.perez@gmail.com, División: Ventas, Estado: Exitoso
