@@ -43,6 +43,28 @@
         <h1 style="margin-left: 22%; margin-top: 1%; font-size: 8mm; color: lavender; opacity: 85%">Clickea en cualquier lugar para desbloquear...</h1>
     </div>
 
+    <div class="modal fade" id="Falla3" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="color: black;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Neurus Robotics</h5>
+                </div>
+                <div class="modal-body">
+                    <h1 style="text-align: center; font-size: 6mm;">Ha fallado demasiadas veces</h1>
+                    <form action="/Desbloquear" method="POST">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Llave:</label>
+                            <input type="password" name="llave" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="p">
+                            <button class="btn">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Formulario de acceso -->
     <h1 style="margin-top: 10%;">Neurus Robotics</h1>
     <form action="/Ingresar" method="POST" class="LogIn">

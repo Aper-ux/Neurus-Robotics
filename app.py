@@ -58,7 +58,7 @@ class main:
 
 app = Flask(__name__)
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Cambia según tu proveedor
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'ignacio.agramont.11@gmail.com'
@@ -68,7 +68,7 @@ app.config['MAIL_DEFAULT_SENDER'] = 'ignacio.agramont.11@gmail.com'
 mail = Mail(app)
 
 categorias = ["Administracion", "Ventas", "Almacenes"]
-roles = ["Administracion", "Almacenes", "Ventas"]
+roles = ["Administracion", "Almacenes", "Ventas","root"]
 def generate_reset_token(email):
     serializer = URLSafeTimedSerializer(app.secret_key)
     return serializer.dumps(email, salt="password-reset-salt")

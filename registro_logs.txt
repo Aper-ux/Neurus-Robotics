@@ -342,3 +342,271 @@
 2024-12-04 20:15:54 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:54] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
 2024-12-04 20:15:54 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:54] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
 2024-12-04 20:15:54 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:54] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:17:46 - INFO -  * Detected change in '/Users/ignacioagramont/Desktop/neurusf/Neurus-Robotics/app.py', reloading
+2024-12-04 20:17:46 - INFO -  * Restarting with stat
+2024-12-04 20:17:47 - WARNING -  * Debugger is active!
+2024-12-04 20:17:47 - INFO -  * Debugger PIN: 719-404-030
+2024-12-04 20:17:48 - INFO -  * Detected change in '/Users/ignacioagramont/Desktop/neurusf/Neurus-Robotics/app.py', reloading
+2024-12-04 20:17:48 - INFO -  * Restarting with stat
+2024-12-04 20:17:49 - WARNING -  * Debugger is active!
+2024-12-04 20:17:49 - INFO -  * Debugger PIN: 719-404-030
+2024-12-04 20:33:02 - ERROR - 127.0.0.1 - - [04/Dec/2024 20:33:02] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03ù$Zö°$C-\x97X\x98Ï')
+2024-12-04 20:33:02 - INFO - 127.0.0.1 - - [04/Dec/2024 20:33:02] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03ù$Zö°$C-\x97X\x98Ï\x0cçy¯¤\x8bQF¦YZ\x88b1[0m" HTTPStatus.BAD_REQUEST -
+2024-12-04 20:33:02 - ERROR - 127.0.0.1 - - [04/Dec/2024 20:33:02] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03kó3ô\x00ì7+')
+2024-12-04 20:33:02 - INFO - 127.0.0.1 - - [04/Dec/2024 20:33:02] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03kó3ô\x00ì7+[0m" HTTPStatus.BAD_REQUEST -
+2024-12-04 20:33:02 - ERROR - 127.0.0.1 - - [04/Dec/2024 20:33:02] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00}\x01\x00\x00y\x03\x01ÂQ«ËÖwÌ5q\x02|')
+2024-12-04 20:33:02 - INFO - 127.0.0.1 - - [04/Dec/2024 20:33:02] "[35m[1m\x16\x03\x01\x00}\x01\x00\x00y\x03\x01ÂQ«ËÖwÌ5q\x02|\x0c\x88¢¨w]óz\x14\x11'2\x98\x97ø^ì\x8f¦\x06\x98\x00\x00\x14À[0m" HTTPStatus.BAD_REQUEST -
+2024-12-04 20:37:58 - INFO - 127.0.0.1 - - [04/Dec/2024 20:37:58] "GET / HTTP/1.1" 200 -
+2024-12-04 20:37:58 - INFO - 127.0.0.1 - - [04/Dec/2024 20:37:58] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 20:37:58 - INFO - 127.0.0.1 - - [04/Dec/2024 20:37:58] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 20:37:58 - INFO - 127.0.0.1 - - [04/Dec/2024 20:37:58] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:37:58 - INFO - 127.0.0.1 - - [04/Dec/2024 20:37:58] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:38:07 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:07] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 20:38:07 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:07] "POST /Login/error HTTP/1.1" 200 -
+2024-12-04 20:38:07 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:07] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 20:38:07 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:07] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 20:38:07 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:07] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:38:07 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:07] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:38:09 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:09] "GET / HTTP/1.1" 200 -
+2024-12-04 20:38:09 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:09] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 20:38:09 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:09] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 20:38:09 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:09] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:38:09 - INFO - 127.0.0.1 - - [04/Dec/2024 20:38:09] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:43:14 - INFO - 127.0.0.1 - - [04/Dec/2024 20:43:14] "POST /forgot-password HTTP/1.1" 200 -
+2024-12-04 20:43:14 - INFO - 127.0.0.1 - - [04/Dec/2024 20:43:14] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 20:43:14 - INFO - 127.0.0.1 - - [04/Dec/2024 20:43:14] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 20:43:14 - INFO - 127.0.0.1 - - [04/Dec/2024 20:43:14] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:43:14 - INFO - 127.0.0.1 - - [04/Dec/2024 20:43:14] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:45:02 - INFO -  * Detected change in '/Users/ignacioagramont/Desktop/neurusf/Neurus-Robotics/app.py', reloading
+2024-12-04 20:45:03 - INFO -  * Restarting with stat
+2024-12-04 20:45:03 - WARNING -  * Debugger is active!
+2024-12-04 20:45:03 - INFO -  * Debugger PIN: 719-404-030
+2024-12-04 20:45:20 - INFO - 127.0.0.1 - - [04/Dec/2024 20:45:20] "POST /forgot-password HTTP/1.1" 200 -
+2024-12-04 20:45:20 - INFO - 127.0.0.1 - - [04/Dec/2024 20:45:20] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 20:45:20 - INFO - 127.0.0.1 - - [04/Dec/2024 20:45:20] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 20:45:20 - INFO - 127.0.0.1 - - [04/Dec/2024 20:45:20] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:45:20 - INFO - 127.0.0.1 - - [04/Dec/2024 20:45:20] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:11:37 - INFO - Inicio del programa.
+2024-12-04 23:11:37 - INFO - Inicio del proceso.
+2024-12-04 23:11:37 - ERROR - Error en el proceso: division by zero
+2024-12-04 23:11:37 - INFO - Fin del proceso.
+2024-12-04 23:11:37 - INFO - Fin del programa.
+2024-12-04 23:11:37 - INFO - Inicio del programa.
+2024-12-04 23:11:37 - INFO - Inicio del proceso.
+2024-12-04 23:11:37 - ERROR - Error en el proceso: division by zero
+2024-12-04 23:11:37 - INFO - Fin del proceso.
+2024-12-04 23:11:37 - INFO - Fin del programa.
+2024-12-04 23:11:40 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 23:11:40 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 23:11:40 - INFO -  * Restarting with stat
+2024-12-04 23:11:40 - WARNING -  * Debugger is active!
+2024-12-04 23:11:40 - INFO -  * Debugger PIN: 719-404-030
+2024-12-04 23:12:45 - INFO - Inicio del programa.
+2024-12-04 23:12:45 - INFO - Inicio del proceso.
+2024-12-04 23:12:45 - ERROR - Error en el proceso: division by zero
+2024-12-04 23:12:45 - INFO - Fin del proceso.
+2024-12-04 23:12:45 - INFO - Fin del programa.
+2024-12-04 23:12:45 - INFO - Inicio del programa.
+2024-12-04 23:12:45 - INFO - Inicio del proceso.
+2024-12-04 23:12:45 - ERROR - Error en el proceso: division by zero
+2024-12-04 23:12:45 - INFO - Fin del proceso.
+2024-12-04 23:12:45 - INFO - Fin del programa.
+2024-12-04 23:12:59 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 23:12:59 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 23:12:59 - INFO -  * Restarting with stat
+2024-12-04 23:12:59 - WARNING -  * Debugger is active!
+2024-12-04 23:12:59 - INFO -  * Debugger PIN: 719-404-030
+2024-12-04 23:13:38 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:38] "GET / HTTP/1.1" 200 -
+2024-12-04 23:13:38 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:38] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 23:13:38 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:38] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 23:13:38 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:38] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:13:38 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:38] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:13:47 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:47] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 23:13:47 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:47] "POST /Login/error HTTP/1.1" 200 -
+2024-12-04 23:13:47 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:47] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 23:13:47 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:47] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 23:13:47 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:47] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:13:47 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:47] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:13:48 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:48] "GET / HTTP/1.1" 200 -
+2024-12-04 23:13:48 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:48] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 23:13:49 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:49] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 23:13:49 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:49] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:13:49 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:49] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:13:54 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:54] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 23:13:54 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:54] "POST /Login/error HTTP/1.1" 200 -
+2024-12-04 23:13:54 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:54] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 23:13:54 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:54] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 23:13:54 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:54] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:13:55 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:55] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:13:56 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:56] "GET / HTTP/1.1" 200 -
+2024-12-04 23:13:56 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:56] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 23:13:56 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:56] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 23:13:56 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:56] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:13:56 - INFO - 127.0.0.1 - - [04/Dec/2024 23:13:56] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:14:01 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:01] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 23:14:01 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:01] "POST /Login/error HTTP/1.1" 200 -
+2024-12-04 23:14:01 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:01] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 23:14:01 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:01] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 23:14:01 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:01] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:14:01 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:01] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:14:02 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:02] "GET / HTTP/1.1" 200 -
+2024-12-04 23:14:02 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:02] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 23:14:02 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:02] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 23:14:02 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:02] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:14:02 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:02] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:14:07 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:07] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 23:14:07 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:07] "POST /Login/error3 HTTP/1.1" 200 -
+2024-12-04 23:14:07 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:07] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 23:14:07 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:07] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 23:14:07 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:07] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 23:14:07 - INFO - 127.0.0.1 - - [04/Dec/2024 23:14:07] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 13:58:25 - INFO - Inicio del programa.
+2024-12-05 13:58:25 - INFO - Inicio del proceso.
+2024-12-05 13:58:25 - ERROR - Error en el proceso: division by zero
+2024-12-05 13:58:25 - INFO - Fin del proceso.
+2024-12-05 13:58:25 - INFO - Fin del programa.
+2024-12-05 13:58:25 - INFO - Inicio del programa.
+2024-12-05 13:58:25 - INFO - Inicio del proceso.
+2024-12-05 13:58:25 - ERROR - Error en el proceso: division by zero
+2024-12-05 13:58:25 - INFO - Fin del proceso.
+2024-12-05 13:58:25 - INFO - Fin del programa.
+2024-12-05 13:58:31 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-05 13:58:31 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 13:58:31 - INFO -  * Restarting with stat
+2024-12-05 13:58:32 - WARNING -  * Debugger is active!
+2024-12-05 13:58:32 - INFO -  * Debugger PIN: 719-404-030
+2024-12-05 14:08:38 - INFO -  * Detected change in '/Users/ignacioagramont/Desktop/neurusf/Neurus-Robotics/app.py', reloading
+2024-12-05 14:08:38 - INFO -  * Restarting with stat
+2024-12-05 14:08:39 - WARNING -  * Debugger is active!
+2024-12-05 14:08:39 - INFO -  * Debugger PIN: 719-404-030
+2024-12-05 14:08:48 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:48] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:08:48 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:48] "POST /Login/error HTTP/1.1" 200 -
+2024-12-05 14:08:48 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:48] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:08:48 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:48] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:08:48 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:48] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:08:48 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:48] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:08:51 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:51] "GET / HTTP/1.1" 200 -
+2024-12-05 14:08:51 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:51] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:08:51 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:51] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:08:51 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:51] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:08:51 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:51] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:56] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:56] "POST /Login/error HTTP/1.1" 200 -
+2024-12-05 14:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:56] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:56] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:56] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:56] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:08:57 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:57] "GET / HTTP/1.1" 200 -
+2024-12-05 14:08:57 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:57] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:08:57 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:57] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:08:57 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:57] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:08:57 - INFO - 127.0.0.1 - - [05/Dec/2024 14:08:57] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:09:04 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:04] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:09:04 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:04] "POST /Login/error HTTP/1.1" 200 -
+2024-12-05 14:09:04 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:04] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:09:04 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:04] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:09:04 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:04] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:09:04 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:04] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:09:05 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:05] "GET / HTTP/1.1" 200 -
+2024-12-05 14:09:05 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:05] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:09:05 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:05] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:09:05 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:05] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:09:05 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:05] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:09:22 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:22] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:09:22 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:22] "[31m[1mPOST /?error=error3 HTTP/1.1[0m" 405 -
+2024-12-05 14:09:27 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:27] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:09:27 - INFO - 127.0.0.1 - - [05/Dec/2024 14:09:27] "[31m[1mPOST /?error=error3 HTTP/1.1[0m" 405 -
+2024-12-05 14:11:01 - INFO -  * Detected change in '/Users/ignacioagramont/Desktop/neurusf/Neurus-Robotics/app.py', reloading
+2024-12-05 14:11:01 - INFO -  * Restarting with stat
+2024-12-05 14:11:02 - WARNING -  * Debugger is active!
+2024-12-05 14:11:02 - INFO -  * Debugger PIN: 719-404-030
+2024-12-05 14:11:42 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:42] "GET / HTTP/1.1" 200 -
+2024-12-05 14:11:42 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:42] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:11:42 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:42] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:11:42 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:42] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:11:42 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:42] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:11:53 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:53] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:11:53 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:53] "POST /Login/error HTTP/1.1" 200 -
+2024-12-05 14:11:53 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:53] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:11:53 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:53] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:11:53 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:53] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:11:53 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:53] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:11:55 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:55] "GET / HTTP/1.1" 200 -
+2024-12-05 14:11:55 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:55] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:11:55 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:55] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:11:55 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:55] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:11:55 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:55] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:11:55 - INFO - 127.0.0.1 - - [05/Dec/2024 14:11:55] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:08] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:12:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:08] "POST /Login/error HTTP/1.1" 200 -
+2024-12-05 14:12:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:08] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:08] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:12:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:08] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:09 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:09] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:10 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:10] "GET / HTTP/1.1" 200 -
+2024-12-05 14:12:10 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:10] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:10 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:10] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:10 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:10] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:12:10 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:10] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:10 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:10] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:15 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:15] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:12:15 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:15] "POST /Login/error HTTP/1.1" 200 -
+2024-12-05 14:12:15 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:15] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:15 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:15] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:12:15 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:15] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:15 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:15] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:17 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:17] "GET / HTTP/1.1" 200 -
+2024-12-05 14:12:17 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:17] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:17 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:17] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:17 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:17] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:12:17 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:17] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:17 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:17] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:25 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:25] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:12:25 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:25] "POST /Login/error3 HTTP/1.1" 200 -
+2024-12-05 14:12:25 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:25] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:25 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:25] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:12:25 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:25] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:25 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:25] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:31 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:31] "[32mPOST /Desbloquear HTTP/1.1[0m" 307 -
+2024-12-05 14:12:31 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:31] "POST /Login/error3 HTTP/1.1" 200 -
+2024-12-05 14:12:31 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:31] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:31 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:31] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:12:31 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:31] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:31 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:31] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:33 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:33] "[32mPOST /Desbloquear HTTP/1.1[0m" 307 -
+2024-12-05 14:12:33 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:33] "POST /Login/error3 HTTP/1.1" 200 -
+2024-12-05 14:12:33 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:33] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:33 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:33] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:12:33 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:33] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:33 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:33] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:58 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:58] "[32mPOST /Desbloquear HTTP/1.1[0m" 302 -
+2024-12-05 14:12:58 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:58] "GET / HTTP/1.1" 200 -
+2024-12-05 14:12:58 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:58] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:12:58 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:58] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:12:58 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:58] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:12:58 - INFO - 127.0.0.1 - - [05/Dec/2024 14:12:58] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:13:07 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:07] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 14:13:07 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:07] "POST /Login/error HTTP/1.1" 200 -
+2024-12-05 14:13:07 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:07] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:13:07 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:07] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:13:07 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:07] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:13:07 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:07] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:13:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:08] "GET / HTTP/1.1" 200 -
+2024-12-05 14:13:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:08] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:13:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:08] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 14:13:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:08] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 14:13:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:08] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:13:08 - INFO - 127.0.0.1 - - [05/Dec/2024 14:13:08] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 14:14:49 - INFO - Inicio del programa.
+2024-12-05 14:14:49 - INFO - Inicio del proceso.
+2024-12-05 14:14:49 - ERROR - Error en el proceso: division by zero
+2024-12-05 14:14:49 - INFO - Fin del proceso.
+2024-12-05 14:14:49 - INFO - Fin del programa.
+2024-12-05 14:14:49 - INFO - Inicio del programa.
+2024-12-05 14:14:49 - INFO - Inicio del proceso.
+2024-12-05 14:14:49 - ERROR - Error en el proceso: division by zero
+2024-12-05 14:14:49 - INFO - Fin del proceso.
+2024-12-05 14:14:49 - INFO - Fin del programa.
