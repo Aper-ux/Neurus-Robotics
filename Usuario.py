@@ -18,6 +18,9 @@ class Usuario:
 
     def subir(self):
         print("listo")
+
+    def editar(self):
+        print("listo")
     
     def eliminar(self, d):
         c = BDD()

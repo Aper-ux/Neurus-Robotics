@@ -17,8 +17,24 @@ class EncargadoDeAlmacenes(Usuario):
             "CI": super().get_ci(),
             "Turno": self.get_turno(),
             "Usuario": super().get_usuario(),
-            "Contraseña": super().get_contraseña()
+            "Contraseña": super().get_contraseña(),
+            "DebeCambiarContraseña": True  # Nuevo campo
         }
 
         db.child("Usuarios").child("Almacenes").child(super().get_nombre()).set(data)
         return super().subir()
+    
+    def editar(self):
+        c = BDD()
+        db = c.db()
+
+        data = { 
+            "CI": super().get_ci(),
+            "Turno": self.get_turno(),
+            "Usuario": super().get_usuario(),
+            "Contraseña": super().get_contraseña(),
+            "DebeCambiarContraseña": False  # Nuevo campo
+        }
+
+        db.child("Usuarios").child("Almacenes").child(super().get_nombre()).set(data)
+        return super().editar()

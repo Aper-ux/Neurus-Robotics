@@ -1,2 +1,11 @@
 2024-12-04 19:54:02 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: alex.quiroga.perez@gmail.com, División: Ventas, Estado: Exitoso
 2024-12-04 20:15:52 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: ignacio.agramont.11@gmail.com, DivisiÃ³n: Administracion, Estado: Exitoso
+2024-12-04 20:32:10 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-04 20:33:47 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: ignacio.agramont.11@gmail.com, División: Desconocido, Estado: Fallido: Intento 1
+2024-12-04 20:34:00 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: ignacio.agramont.11@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-04 20:34:36 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-04 20:37:07 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-04 20:39:04 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-04 20:46:24 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-04 20:50:35 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-04 20:51:26 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso

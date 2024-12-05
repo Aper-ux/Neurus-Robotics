@@ -23,7 +23,7 @@
         $("#boton").html('Registrar');
         $("#titulo").html('Registrar usuario');
         //cambia la url del action
-        $("#form").attr('action','{{url_for("AgregarEditarUsuario")}}');
+        $("#form").attr('action','{{url_for("AgregarUsuario")}}');
         $("#abm").modal('show')
     }
     function actualizar(id,nom,ci,pu,us,pas){
@@ -44,7 +44,7 @@
         $("#boton").html('Editar');
         $("#titulo").html('Editar usuario');
 
-        $("#form").attr('action','{{url_for("AgregarEditarUsuario")}}');
+        $("#form").attr('action','{{url_for("EditarUsuario")}}');
         $("#abm").modal('show')
     }
     function eliminar(id,nom,ci,pu,us,pas){
@@ -67,6 +67,17 @@
 
         $("#form").attr('action','{{url_for("EliminarUsuario")}}');
         $("#abm").modal('show')
+    }
+
+    function validarContraseña() {
+        var contraseña = $("#Contraseña").val();
+        var patron = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{12,}$/;
+
+        if (!patron.test(contraseña)) {
+            alert("La contraseña debe tener al menos 12 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.");
+            return false;
+        }
+        return true;
     }
 </script>
 
@@ -284,5 +295,6 @@
             </div>
         </div>
     </div>
+
 </div>
 {% endblock%}
