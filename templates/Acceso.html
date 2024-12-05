@@ -1,14 +1,13 @@
 <!DOCTYPE html> 
-<html lang = "en">
+<html lang="en">
 <link rel="icon" type="image/jpg" href="../static/icon.jpg"/>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Neurus Robotics</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <!-- Modal -->
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     {% if error == "error" %}
@@ -23,39 +22,30 @@
             $('#Falla3').modal('show');
         });
     </script>
-    {% else %}
-    <script type="text/javascript">
-        $(window).load(function() {
-            $('#block').modal('show');
-        });
-    </script>
-    {%endif%}
+    {% endif %}
 </head>
 
 <body>
-    <link rel="stylesheet" href="{{url_for('static',filename='LogIn.css')}}">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    <!-- Modal pantalla de bloqueo -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='LogIn.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Modal pantalla de bloqueo -->
     <div class="modal fade Port" id="block" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <h1 style="margin-left: 12%; margin-top: 15%;">Neurus Robotics</h1>
         <div class="Reloj" style="margin-top: 10%; margin-right: 55%; opacity: 55%;"> 
             <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=large&timezone=America%2FLa_Paz" width="100%" height="140" frameborder="0" seamless></iframe>
         </div>
-
         <div class="modal-dialog" style="opacity: 0%;">
             <div class="modal-content">
                 <button type="button" class="btno btn-secondary" data-bs-dismiss="modal" style="width: 100%;">Close</button>
             </div>
         </div>
         <h1 style="margin-left: 22%; margin-top: 1%; font-size: 8mm; color: lavender; opacity: 85%">Clickea en cualquier lugar para desbloquear...</h1>
-
     </div>
 
     <!-- Formulario de acceso -->
-
     <h1 style="margin-top: 10%;">Neurus Robotics</h1>
-    <form action="/Ingresar" method="POST" class = "LogIn">
+    <form action="/Ingresar" method="POST" class="LogIn">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Usuario</label>
             <input type="email" name="Usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -64,52 +54,79 @@
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
             <input type="password" name="Contraseña" class="form-control" id="exampleInputPassword1">
         </div>
+        <div class="mb-3 text-center">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" style="color: white; text-decoration: none;">Olvidé mi contraseña</a>
+        </div>
         <div class="p">
             <a class="btn" style="padding-left: 12mm; padding-right: 12mm;" data-bs-toggle="modal" data-bs-target="#block">Salir</a>
             <button class="btn">Ingresar</button>
-        </div>    
-    </form>   
-
-    <!-- Modal de error al ingresar -->
+        </div>
+    </form>
     
-    <div class="modal fade" id="Falla" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- Modal para "Olvidé mi contraseña" -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content" style="color: black;">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Neurus Robotics</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content" style="color: black;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Recuperar Contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/forgot-password" method="POST">
+                        <div class="mb-3">
+                            <label for="forgotPasswordEmail" class="col-form-label">Correo electrónico:</label>
+                            <input type="email" name="email" class="form-control" id="forgotPasswordEmail" required>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary">Enviar enlace de recuperación</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="modal-body">
-                <h1 style="text-align: center; font-size: 6mm;">Usuario o contraseña incorrecta intenta denuevo</h1>
-            </div>
-            <div class="modal-footer" style="display: flex; place-items: center; justify-content: center;">
-              <a class="btn" href="{{url_for('Login')}}">Ok</a>
-            </div>
-          </div>
         </div>
     </div>
 
-    <!-- Modal de 3 errores al ingresar -->
-
-    <div class="modal fade" id="Falla3" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal de estado para mensajes de éxito o error -->
+    <div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content" style="color: black;">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Neurus Robotics</h5>
+            <div class="modal-content" style="color: black;"> <!-- Cambié el color de las letras a negro -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="statusModalLabel">{{ 'Éxito' if success else 'Error' }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{ message }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <h1 style="text-align: center; font-size: 6mm;">Ha fallado demasiadas veces</h1>
-                <form action="/Desbloquear" method="POST">
-                    <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Llave:</label>
-                        <input type="password" name="llave" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="p">
-                        <button class="btn">Ingresar</button>
-                    </div>
-                </form>
+        </div>
+    </div>
+
+    <!-- Script para mostrar el modal de estado -->
+    <script>
+        {% if message %}
+        var statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+        statusModal.show();
+        {% endif %}
+    </script>
+
+    <!-- Modal de error al ingresar -->
+    <div class="modal fade" id="Falla" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="color: black;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Neurus Robotics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1 style="text-align: center; font-size: 6mm;">Usuario o contraseña incorrecta intenta denuevo</h1>
+                </div>
+                <div class="modal-footer" style="display: flex; place-items: center; justify-content: center;">
+                    <a class="btn" href="{{ url_for('Login') }}">Ok</a>
+                </div>
             </div>
-          </div>
         </div>
     </div>
 </body>

@@ -1,5 +1,10 @@
 from logging import warning
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, jsonify
+
+from flask_mail import Mail, Message
+from itsdangerous import URLSafeTimedSerializer
+from datetime import datetime, timedelta
+
 from BDD import BDD
 import numpy as np
 import os
@@ -52,6 +57,127 @@ class main:
         self.prc = prc
 
 app = Flask(__name__)
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Cambia según tu proveedor
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'ignacio.agramont.11@gmail.com'
+app.config['MAIL_PASSWORD'] = 'ekgp nnmu bwlr zkpy'
+app.config['MAIL_DEFAULT_SENDER'] = 'ignacio.agramont.11@gmail.com'
+
+mail = Mail(app)
+
+categorias = ["Administracion", "Ventas", "Almacenes"]
+roles = ["Administracion", "Almacenes", "Ventas"]
+def generate_reset_token(email):
+    serializer = URLSafeTimedSerializer(app.secret_key)
+    return serializer.dumps(email, salt="password-reset-salt")
+
+def send_reset_email(to_email, reset_url):
+    msg = Message("Recuperación de contraseña", recipients=[to_email])
+    msg.body = f"Hola, usa este enlace para restablecer tu contraseña: {reset_url}. Este enlace expira en 1 hora."
+    mail.send(msg)
+
+def sanitize_token(token):
+    # Reemplazar caracteres problemáticos por caracteres seguros
+    return token.replace('.', '_').replace('-', '_')
+
+def hash_token(token):
+    return hashlib.sha256(token.encode('utf-8')).hexdigest()
+
+@app.route('/forgot-password', methods=['POST'])
+def forgot_password():
+    email = request.form.get('email')
+    db = BDD().db()
+
+    roles = ["Administracion", "Almacenes", "Ventas"]
+    usuario_encontrado = None
+    categoria_encontrada = None
+
+    for role in roles:
+        usuarios = db.child("Usuarios").child(role).get().val()
+        if usuarios:
+            for nombre, datos in usuarios.items():
+                if datos.get("Usuario") == email:
+                    usuario_encontrado = nombre
+                    categoria_encontrada = role
+                    break
+        if usuario_encontrado:
+            break
+
+    if not usuario_encontrado:
+        return render_template('acceso.html', message="Usuario no encontrado.", success=False)
+
+    token = generate_reset_token(email)
+    sanitized_token = sanitize_token(token)
+    hashed_token = hash_token(sanitized_token)
+    expiration = (datetime.utcnow() + timedelta(hours=1)).isoformat()
+
+    db.child("password_reset_tokens").child(hashed_token).set({
+        "user_email": email,
+        "categoria": categoria_encontrada,
+        "nombre_usuario": usuario_encontrado,
+        "expiration": expiration
+    })
+
+    reset_url = f"http://127.0.0.1:5000/reset-password/{sanitized_token}"
+    send_reset_email(email, reset_url)
+
+    return render_template('acceso.html', message="Correo de recuperación enviado.", success=True)
+
+
+@app.route('/reset-password/<token>', methods=['POST'])
+def reset_password(token):
+    db = BDD().db()
+
+    # Obtener los datos del token desde Firebase
+    hashed_token = hash_token(token)
+    token_data = db.child("password_reset_tokens").child(hashed_token).get().val()
+
+    if not token_data:
+        return render_template('Reset.html', token=token, success=False, message="Token inválido o expirado.")
+
+    # Verificar si el token ha expirado
+    expiration = datetime.fromisoformat(token_data["expiration"])
+    if datetime.utcnow() > expiration:
+        db.child("password_reset_tokens").child(hashed_token).set(None)
+        return render_template('Reset.html', token=token, success=False, message="El token ha expirado.")
+
+    # Obtener datos del token
+    email = token_data["user_email"]
+    categoria = token_data["categoria"]
+    nombre_usuario = token_data["nombre_usuario"]
+
+    # Obtener la nueva contraseña desde el formulario
+    new_password = request.form.get('password')
+    if not new_password:
+        return render_template('Reset.html', token=token, success=False, message="La nueva contraseña es requerida.")
+
+    # Generar el hash de la nueva contraseña utilizando el correo como salt
+    salt = email.strip()
+    hashed_password = encriptar_contrasena(new_password.strip(), salt)
+
+    # Actualizar la contraseña en Firebase
+    db.child("Usuarios").child(categoria).child(nombre_usuario).update({"Contraseña": hashed_password})
+
+    # Eliminar el token usado
+    db.child("password_reset_tokens").child(hashed_token).set(None)
+
+    return render_template('Reset.html', token=token, success=True, message="Contraseña actualizada con éxito.")
+
+
+@app.route('/reset-password/<token>', methods=['GET'])
+def reset_password_form(token):
+    sanitized_token = sanitize_token(token)
+    hashed_token = hash_token(sanitized_token)
+
+    db = BDD().db()
+    token_data = db.child("password_reset_tokens").child(hashed_token).get().val()
+
+    if not token_data:
+        return render_template('Reset.html', success=False, message="Token inválido o expirado.")
+
+    return render_template('Reset.html', token=token)
 
 # LogIn
 prod = []
@@ -155,7 +281,6 @@ def Ingresar():
     try:
         # Conexión a la base de datos
         print("Estableciendo conexión con la base de datos...")
-        # Aquí vendría la lógica para conectar con tu base de datos
         c = BDD()
         db = c.db()
         print("Conexión con la base de datos establecida.")
@@ -174,15 +299,16 @@ def Ingresar():
         if not us or not pas:
             print("Usuario o contraseña no proporcionados.")
             guardar_registro(us, "Desconocido", "Fallido: Usuario o contraseña no proporcionados", ip_cliente, url_solicitud)
-            return redirect(('/Login/error'), code=307)
+            return redirect('/Login/error', code=307)
 
+        # Validar intentos fallidos
         if i.i >= 3:
             print("Máximo de intentos alcanzado.")
             guardar_registro(us, "Desconocido", "Fallido: Máximo de intentos alcanzado", ip_cliente, url_solicitud)
-            return redirect(('/Login/error3'), code=307)
+            return redirect('/Login/error3', code=307)
 
         # Divisiones de usuarios
-        print("Obteniendo datos de usuarios...")
+        print("Obteniendo datos de 'Ventas', 'Almacenes' y 'Administracion'...")
         divisiones = {
             "Ventas": db.child("Usuarios").child("Ventas").get(),
             "Almacenes": db.child("Usuarios").child("Almacenes").get(),
@@ -195,23 +321,35 @@ def Ingresar():
                     usuario = t.val()
                     print(f"Procesando nodo de '{division}': {usuario}")
 
-                    if usuario and usuario.get('Usuario') == us and verificar_contrasena(pas, us, usuario.get('Contraseña')):
-                        session['name'] = t.key()
-                        session['div'] = division
-                        print(f"Inicio de sesión exitoso en '{division}'.")
-                        guardar_registro(us, division, "Exitoso", ip_cliente, url_solicitud)
-                        return redirect(obtener_ruta_por_division(division), code=307)
+                    if usuario and usuario.get('Usuario') == us:
+                        # Usar el correo como salt
+                        salt = usuario['Usuario'].strip()
+                        print(f"Salt utilizado (correo): {salt}")
+
+                        # Generar el hash
+                        generated_hash = encriptar_contrasena(pas.strip(), salt)
+                        print(f"Hash generado para validación: {generated_hash}")
+                        print(f"Hash almacenado: {usuario['Contraseña']}")
+
+                        if generated_hash == usuario['Contraseña']:
+                            session['name'] = t.key()
+                            session['div'] = division
+                            print(f"Inicio de sesión exitoso en '{division}'.")
+                            guardar_registro(us, division, "Exitoso", ip_cliente, url_solicitud)
+                            return redirect(obtener_ruta_por_division(division), code=307)
+                        else:
+                            print("Contraseña incorrecta.")
 
         # Si no se encontró al usuario
         i.i += 1
         print(f"Intento fallido {i.i}. Usuario no encontrado.")
         guardar_registro(us, "Desconocido", f"Fallido: Intento {i.i}", ip_cliente, url_solicitud)
-        return redirect(('/Login/error'), code=307)
+        return redirect('/Login/error', code=307)
 
     except Exception as e:
         print(f"Error en el proceso de inicio de sesión: {e}")
         guardar_registro("Error", "Sistema", f"Excepción: {str(e)}", request.remote_addr, request.url)
-        return redirect(('/Login/error'), code=307)
+        return redirect('/Login/error', code=307)
 
 
 @app.route('/Desbloquear', methods=['POST'])

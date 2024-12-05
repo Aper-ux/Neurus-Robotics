@@ -312,3 +312,33 @@
 2024-12-04 19:57:52 - ERROR - Error en el proceso: division by zero
 2024-12-04 19:57:52 - INFO - Fin del proceso.
 2024-12-04 19:57:52 - INFO - Fin del programa.
+2024-12-04 20:09:47 - WARNING -  * Debugger is active!
+2024-12-04 20:09:47 - INFO -  * Debugger PIN: 719-404-030
+2024-12-04 20:11:16 - INFO -  * Detected change in '/Users/ignacioagramont/Desktop/neurusf/Neurus-Robotics/app.py', reloading
+2024-12-04 20:15:11 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 20:15:11 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 20:15:11 - INFO -  * Restarting with stat
+2024-12-04 20:15:12 - WARNING -  * Debugger is active!
+2024-12-04 20:15:12 - INFO -  * Debugger PIN: 719-404-030
+2024-12-04 20:15:15 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:15] "GET / HTTP/1.1" 200 -
+2024-12-04 20:15:15 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:15] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 20:15:16 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:16] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 20:15:16 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:16] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:15:16 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:16] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:15:30 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:30] "POST /forgot-password HTTP/1.1" 200 -
+2024-12-04 20:15:30 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:30] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 20:15:30 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:30] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 20:15:30 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:30] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:15:30 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:30] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:15:38 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:38] "GET /reset-password/ImlnbmFjaW8uYWdyYW1vbnQuMTFAZ21haWwuY29tIg_Z1Dwnw_lpDJifQP9k0wajr_hXACQAAzmqA HTTP/1.1" 200 -
+2024-12-04 20:15:38 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:38] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 20:15:38 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:38] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:15:41 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:41] "POST /reset-password/ImlnbmFjaW8uYWdyYW1vbnQuMTFAZ21haWwuY29tIg_Z1Dwnw_lpDJifQP9k0wajr_hXACQAAzmqA HTTP/1.1" 200 -
+2024-12-04 20:15:41 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:41] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-04 20:15:41 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:41] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-04 20:15:52 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:52] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-04 20:15:54 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:54] "POST /Usuarios HTTP/1.1" 200 -
+2024-12-04 20:15:54 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:54] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-04 20:15:54 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:54] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-04 20:15:54 - INFO - 127.0.0.1 - - [04/Dec/2024 20:15:54] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
