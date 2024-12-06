@@ -36,11 +36,22 @@ class Proveedor():
         db.child("Proveedor").child(self.get_id()).remove()
     
     def buscar(self):
+        """
+        Busca un proveedor por nombre en la base de datos.
+        Retorna la clave del proveedor si lo encuentra, de lo contrario, retorna None.
+        """
         c = BDD()
         db = c.db()
         b = db.child("Proveedor").get()
-        bus = 0
+
+        if not b.each():
+            print("No se encontraron proveedores en la base de datos.")
+            return None
+
         for t in b.each():
-            if (t.val()['Nombre'] == self.get_nombre()):
-                bus = t.key()
-        return(bus)
+            datos = t.val()
+            if datos and 'Nombre' in datos and datos['Nombre'] == self.get_nombre():
+                return t.key()
+
+        print(f"Proveedor con nombre '{self.get_nombre()}' no encontrado.")
+        return None

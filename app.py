@@ -1002,12 +1002,13 @@ def Prodc():
                 p3.subir()
     return render_template("Compras.html", bdp=bdp, a=a, prc = pro.prc, i=i, prov=prov)
 
-@app.route("/Compras/compra", methods = ['POST'])
+@app.route("/Compras/compra", methods=['POST'])
 def compra():
     c = BDD()
     db = c.db()
     d = db.child("Compra").get()
     n = 0
+
     for t in d.each():
         n = int(t.key()) + 1
 
@@ -1017,18 +1018,24 @@ def compra():
     precio = str(pro.prc)
     producto = str(pro.pc)
     prov = request.form['Proveedor']
-    prove = Proveedor('','','',prov,'')
-    proveedor = prove.buscar()
+    prove = Proveedor('', '', '', prov, '')
 
-    if len(producto) == 2:
+    # Buscar proveedor
+    proveedor = prove.buscar()
+    if proveedor is None:
+        print("Error: Proveedor no encontrado.")
+        return redirect("/Compras/error_proveedor", code=307)
+
+    if len(producto) <= 2:  # Ajustado para mayor claridad
         return redirect("/Compras")
 
-    tot = np.multiply(pro.cc,pro.prc)
+    tot = np.multiply(pro.cc, pro.prc)
     total = sum(tot)
 
-    com = Compra(id,cantidad, encargado, precio, producto, proveedor, total)
+    com = Compra(id, cantidad, encargado, precio, producto, proveedor, total)
     com.subir()
 
+    # Reiniciar variables de producto
     pro.pc = []
     pro.cc = []
     pro.prc = []

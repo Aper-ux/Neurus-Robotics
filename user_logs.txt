@@ -45,3 +45,9 @@
 2024-12-05 17:28:29 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: prueba.correo@gmail.com, División: Administracion, Estado: Exitoso
 2024-12-05 17:28:45 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
 2024-12-05 17:29:45 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: prueba.correo@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 20:29:57 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Desconocido, Estado: Fallido: Intento 1
+2024-12-05 20:30:10 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 21:03:13 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: natalia.agramont@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 21:09:33 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: natalia.agramont@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 21:10:03 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: melany.kaune@gmail.com, División: Ventas, Estado: Exitoso
+2024-12-05 21:11:06 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: jose.morales@gmail.com, División: Almacenes, Estado: Exitoso
