@@ -23,7 +23,7 @@
         $("#boton").html('Registrar');
         $("#titulo").html('Registrar usuario');
         //cambia la url del action
-        $("#form").attr('action','{{url_for("AgregarEditarUsuario")}}');
+        $("#form").attr('action','{{url_for("AgregarUsuario")}}');
         $("#abm").modal('show')
     }
     function actualizar(id,nom,ci,pu,us,pas){
@@ -44,7 +44,7 @@
         $("#boton").html('Editar');
         $("#titulo").html('Editar usuario');
 
-        $("#form").attr('action','{{url_for("AgregarEditarUsuario")}}');
+        $("#form").attr('action','{{url_for("EditarUsuario")}}');
         $("#abm").modal('show')
     }
     function eliminar(id,nom,ci,pu,us,pas){
@@ -68,6 +68,24 @@
         $("#form").attr('action','{{url_for("EliminarUsuario")}}');
         $("#abm").modal('show')
     }
+
+    function validarContraseña() {
+    var contraseña = $("#Contraseña").val();
+    var patronTextoPlano = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{12,}$/;
+    var patronHash = /^[a-f0-9]{64}$/; // Patrón para detectar SHA-256
+
+    if (patronHash.test(contraseña)) {
+        // Es un hash, no validar.
+        return true;
+    }
+
+    if (!patronTextoPlano.test(contraseña)) {
+        alert("La contraseña debe tener al menos 12 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.");
+        return false;
+    }
+    return true;
+}
+
 </script>
 
 <h1 style="margin: 1%;">Lista de usuarios</h1>  
@@ -251,7 +269,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST" style="font-size: 20px;" id="form">                                               
+                <form action="" method="POST" style="font-size: 20px;" id="form" onsubmit="return validarContraseña();">
                     <div class="mb-3">
                         <label for="Id" class="form-label">División</label>
                         <input id="Id" name="Id" class="form-control" required="1">
@@ -266,23 +284,24 @@
                     </div>
                     <div class="mb-3">
                         <label for="pu" id="pul" class="form-label"></label>
-                        <input id="pu"  name="pu" class="form-control" required="1">
+                        <input id="pu" name="pu" class="form-control" required="1">
                     </div>
                     <div class="mb-3">
                         <label for="Usuario" class="form-label">Usuario</label>
-                        <input id="Usuario"  name="Usuario" class="form-control">
+                        <input id="Usuario" name="Usuario" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="Contraseña" class="form-label">Contraseña</label>
-                        <input type="password" id="Contraseña"  name="Contraseña" class="form-control">
+                        <input type="password" id="Contraseña" name="Contraseña" class="form-control">
                     </div>
                     <div style="display: flex; justify-content: space-around;">
                         <button type="btn" class="btno" data-bs-dismiss="modal">Cancelar</button>
                         <button id="boton" onclick="$('#Id').prop('disabled', false); $('#Nombre').prop('disabled', false);" type="submit" name="boton" class="btno"></button>
                     </div>
-                </form>
+                </form>                
             </div>
         </div>
     </div>
+
 </div>
 {% endblock%}

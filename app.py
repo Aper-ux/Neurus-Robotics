@@ -245,6 +245,8 @@ def obtener_ruta_por_division(division, cambiar_contrasena=False):
             return url_for('CambiarContraseña') if cambiar_contrasena else url_for('Productos')
         case "Administracion":
             return url_for('CambiarContraseña') if cambiar_contrasena else url_for('Usuarios')
+        case "root":
+            return url_for('Usuarios')
         case _:
             raise ValueError(f"División no reconocida: {division}")
         
@@ -275,6 +277,81 @@ def guardar_registro(usuario, division, estado, ip, url):
     with open(user_logs_file, 'a') as log_file:
         fecha_hora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         log_file.write(f"{fecha_hora} - IP: {ip} - URL: {url} - Usuario: {usuario}, División: {division}, Estado: {estado}\n")
+
+import re
+
+@app.route('/CambiarContraseña', methods=['POST', 'GET'])
+def CambiarContraseña():
+    print("Ingresando a CambiarContraseña")
+    try:
+        # Validar si el usuario está en sesión
+        user = session.get('name')
+        div = session.get('div')
+
+        if not user or div not in ["Ventas", "Almacenes", "Administracion"]:
+            error = "Sesión no válida. Inicie sesión nuevamente."
+            return redirect(f'/Login?error={error}')
+
+        # Conexión a la base de datos
+        c = BDD()
+        db = c.db()
+
+        # Obtener datos del usuario desde la base de datos
+        usuario = db.child("Usuarios").child(div).child(user).get().val()
+        error = None
+
+        if request.method == 'POST':
+            nueva_contrasena = request.form.get('NuevaContraseña')
+            confirmar_contrasena = request.form.get('ConfirmarContraseña')
+
+            # Validar contraseñas
+            if nueva_contrasena and confirmar_contrasena:
+                # Validar formato de la contraseña
+                mensaje_error = validar_contrasena(nueva_contrasena)
+                if mensaje_error:
+                    error = mensaje_error
+                elif nueva_contrasena != confirmar_contrasena:
+                    error = "Las contraseñas no coinciden. Inténtelo nuevamente."
+                else:
+                    # Actualizar contraseña en la base de datos
+                    db.child("Usuarios").child(div).child(user).update({
+                        "Contraseña": encriptar_contrasena(nueva_contrasena, usuario["Usuario"]),
+                        "DebeCambiarContraseña": False
+                    })
+                    mensaje = "Contraseña cambiada exitosamente. Inicie sesión nuevamente."
+                    ruta = obtener_ruta_por_division(div)
+                    return redirect(ruta, code=307)
+            else:
+                error = "Por favor complete ambos campos."
+
+        # Renderizar la página inicial para cambiar contraseña
+        return render_template("CambiarContraseña.html", usuario=usuario, error=error)
+
+    except Exception as e:
+        print(f"Error en CambiarContraseña: {e}")
+        return redirect('/Login?error=Error inesperado en el servidor.')
+
+def validar_contrasena(contrasena):
+    """
+    Valida que la contraseña cumpla con los siguientes requisitos:
+    - Mínimo 12 caracteres
+    - Al menos 1 letra mayúscula
+    - Al menos 1 letra minúscula
+    - Al menos 1 número
+    - Al menos 1 carácter especial
+    """
+    if len(contrasena) < 12:
+        return "La contraseña debe tener al menos 12 caracteres."
+    if not re.search(r"[A-Z]", contrasena):
+        return "La contraseña debe contener al menos una letra mayúscula."
+    if not re.search(r"[a-z]", contrasena):
+        return "La contraseña debe contener al menos una letra minúscula."
+    if not re.search(r"[0-9]", contrasena):
+        return "La contraseña debe contener al menos un número."
+    if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", contrasena):
+        return "La contraseña debe contener al menos un carácter especial."
+    return None  # Contraseña válida
+
 
 @app.route('/Ingresar', methods=['POST'])
 def Ingresar():
@@ -313,30 +390,34 @@ def Ingresar():
             "Ventas": db.child("Usuarios").child("Ventas").get(),
             "Almacenes": db.child("Usuarios").child("Almacenes").get(),
             "Administracion": db.child("Usuarios").child("Administracion").get(),
+            "root": db.child("Usuarios").child("root").get()
         }
 
         for division, datos in divisiones.items():
             if datos:
                 for t in datos.each():
                     usuario = t.val()
-                    print(f"Procesando nodo de '{division}': {usuario}")
+                    #print(f"Procesando nodo de '{division}': {usuario}")
 
                     if usuario and usuario.get('Usuario') == us:
                         # Usar el correo como salt
                         salt = usuario['Usuario'].strip()
-                        print(f"Salt utilizado (correo): {salt}")
+                        #print(f"Salt utilizado (correo): {salt}")
 
                         # Generar el hash
                         generated_hash = encriptar_contrasena(pas.strip(), salt)
-                        print(f"Hash generado para validación: {generated_hash}")
-                        print(f"Hash almacenado: {usuario['Contraseña']}")
+                        #print(f"Hash generado para validación: {generated_hash}")
+                        #print(f"Hash almacenado: {usuario['Contraseña']}")
 
                         if generated_hash == usuario['Contraseña']:
                             session['name'] = t.key()
                             session['div'] = division
                             print(f"Inicio de sesión exitoso en '{division}'.")
+                            
+                            # Revisamos si el usuario debe cambiar su contraseña
+                            cambiar_contrasena = usuario.get('DebeCambiarContraseña', False)
                             guardar_registro(us, division, "Exitoso", ip_cliente, url_solicitud)
-                            return redirect(obtener_ruta_por_division(division), code=307)
+                            return redirect(obtener_ruta_por_division(division, cambiar_contrasena), code=307)
                         else:
                             print("Contraseña incorrecta.")
 
@@ -1061,8 +1142,8 @@ def encriptar_contrasena(contrasena, salt):
     hash_hex = hash_object.hexdigest()
     return hash_hex
 
-@app.route("/Usuarios/AgregarEditarUsuario", methods = ['POST'])
-def AgregarEditarUsuario():
+@app.route("/Usuarios/AgregarUsuario", methods=['POST'])
+def AgregarUsuario():
     id = request.form['Id']
     n = request.form['Nombre']
     ci = request.form['CI']
@@ -1071,15 +1152,44 @@ def AgregarEditarUsuario():
     c = request.form['Contraseña']
 
     c = encriptar_contrasena(c, u)
-    print("Contraseña:", c)
 
-    if (id == 'Ventas'):
-        usuario = Vendedor(ci,n,u,c,pu)
-    if (id == 'Almacenes'):
-        usuario = EncargadoDeAlmacenes(ci,n,u,c,pu)
-    if (id == 'Administracion'):
-        usuario = Administrador(ci,n,u,c,pu)
+    if id == 'Ventas':
+        usuario = Vendedor(ci, n, u, c, pu)
+    elif id == 'Almacenes':
+        usuario = EncargadoDeAlmacenes(ci, n, u, c, pu)
+    elif id == 'Administracion':
+        usuario = Administrador(ci, n, u, c, pu)
+    
     usuario.subir()
+    return redirect("/Usuarios")
+
+import re
+
+@app.route("/Usuarios/EditarUsuario", methods=['POST'])
+def EditarUsuario():
+    id = request.form['Id']
+    n = request.form['Nombre']
+    ci = request.form['CI']
+    pu = request.form['pu']
+    u = request.form['Usuario']
+    c = request.form['Contraseña']
+
+    # Detectar si la contraseña está en formato SHA-256
+    def es_sha256(valor):
+        patron = r'^[a-f0-9]{64}$'  # Patrón para un hash SHA-256 (64 caracteres hexadecimales)
+        return re.match(patron, valor) is not None
+
+    if not es_sha256(c):  # Solo encriptar si no es SHA-256
+        c = encriptar_contrasena(c, u)
+
+    if id == 'Ventas':
+        usuario = Vendedor(ci, n, u, c, pu)
+    elif id == 'Almacenes':
+        usuario = EncargadoDeAlmacenes(ci, n, u, c, pu)
+    elif id == 'Administracion':
+        usuario = Administrador(ci, n, u, c, pu)
+    
+    usuario.editar()
     return redirect("/Usuarios")
 
 @app.route("/Usuarios/EliminarUsuario", methods = ['POST'])

@@ -15,3 +15,33 @@
 2024-12-05 14:12:15 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: ffffff@dddddd, DivisiÃ³n: Desconocido, Estado: Fallido: Intento 3
 2024-12-05 14:12:25 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: ggggggg@ssssss, DivisiÃ³n: Desconocido, Estado: Fallido: MÃ¡ximo de intentos alcanzado
 2024-12-05 14:13:07 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: dddddd@ddd, DivisiÃ³n: Desconocido, Estado: Fallido: Intento 3
+2024-12-05 15:52:58 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: root@neurus, División: Desconocido, Estado: Fallido: Intento 1
+2024-12-05 16:02:26 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Desconocido, Estado: Fallido: Intento 1
+2024-12-05 16:02:43 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 16:03:18 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: root@neurus, División: Desconocido, Estado: Fallido: Intento 2
+2024-12-05 16:11:19 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: root@neurus, División: Desconocido, Estado: Fallido: Intento 3
+2024-12-05 16:14:22 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: root@neurus, División: Desconocido, Estado: Fallido: Máximo de intentos alcanzado
+2024-12-05 16:14:57 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: root@neurus, División: root, Estado: Exitoso
+2024-12-05 16:16:52 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 16:26:51 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 16:28:04 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 16:31:47 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 16:34:51 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 16:36:12 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 16:55:17 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 16:59:56 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: root@neurus, División: root, Estado: Exitoso
+2024-12-05 17:03:28 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: prueba.correo@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 17:04:38 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Desconocido, Estado: Fallido: Intento 1
+2024-12-05 17:04:50 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 17:05:07 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: root@neurus, División: root, Estado: Exitoso
+2024-12-05 17:11:19 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Desconocido, Estado: Fallido: Intento 2
+2024-12-05 17:11:36 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 17:12:27 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: prueba.correo@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 17:13:19 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: prueba2.correo@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 17:14:23 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 17:26:09 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: prueba.correo@gmail.com, División: Desconocido, Estado: Fallido: Intento 3
+2024-12-05 17:27:37 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 17:28:17 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: prueba.correo@gmail.com, División: Desconocido, Estado: Fallido: Intento 1
+2024-12-05 17:28:29 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: prueba.correo@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 17:28:45 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: guido.neurus@gmail.com, División: Administracion, Estado: Exitoso
+2024-12-05 17:29:45 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: prueba.correo@gmail.com, División: Administracion, Estado: Exitoso
