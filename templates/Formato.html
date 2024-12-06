@@ -111,7 +111,7 @@
                     {% if session['div'] == 'root' %}
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('Usuarios')}}" style="font-family: Montserrat; font-size: 5mm;">Usuarios</a>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a class="nav-link" href="{{url_for('Ventas')}}" style="font-family: Montserrat; font-size: 5mm;">Venta</a>
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('Compras')}}" style="font-family: Montserrat; font-size: 5mm;">Compra</a>
@@ -124,17 +124,17 @@
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('RV')}}" style="font-family: Montserrat; font-size: 4.5mm;">Reporte de Ventas</a>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{url_for('RC')}}" style="font-family: Montserrat; font-size: 4.5mm;">Reporte de Compras</a>  
+                      <a class="nav-link" href="{{url_for('RC')}}" style="font-family: Montserrat; font-size: 4.5mm;">Reporte de Compras</a>   -->
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('Login')}}" style="font-family: Montserrat; font-size: 4.5mm;">Salir</a>
                     </li>
                     {%endif%}
                 </ul>
                 {% if session['div'] == 'Administracion' or session['div'] == 'root' %}
-                <a class="btn btn-dark" onclick = "info('{{i.val().Direccion}}','{{i.val().NIT}}','{{i.val().Telefono}}')" style="margin-left:auto; color: aliceblue; font-size: 4mm;">Acerca de</a>
+                <!-- <a class="btn btn-dark" onclick = "info('{{i.val().Direccion}}','{{i.val().NIT}}','{{i.val().Telefono}}')" style="margin-left:auto; color: aliceblue; font-size: 4mm;">Acerca de</a> -->
                 {%endif%}
                 {% if session['div'] == 'root' %}
-                <a class="btn btn-secondary" onclick = "info('{{i.val().Direccion}}','{{i.val().NIT}}','{{i.val().Telefono}}')" style="margin-left:auto; color: aliceblue; font-size: 4mm;">Cambiar llave</a>
+                <a class="btn btn-secondary" onclick = "info('{{i.val().Direccion}}','{{i.val().NIT}}','{{i.val().Telefono}}')" style="margin-left:auto; color: aliceblue; font-size: 4mm;">Mostrar llave</a>
                 {%endif%}
             </div>
         </div>

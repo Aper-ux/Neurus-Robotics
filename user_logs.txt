@@ -51,3 +51,8 @@
 2024-12-05 21:09:33 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: natalia.agramont@gmail.com, División: Administracion, Estado: Exitoso
 2024-12-05 21:10:03 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: melany.kaune@gmail.com, División: Ventas, Estado: Exitoso
 2024-12-05 21:11:06 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: jose.morales@gmail.com, División: Almacenes, Estado: Exitoso
+2024-12-05 21:33:58 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: melany.kaune@gmail.com, División: Ventas, Estado: Exitoso
+2024-12-05 21:54:57 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: alex.quiroga.perez@gmail.com, División: Desconocido, Estado: Fallido: Intento 1
+2024-12-05 21:58:43 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: melany.kaune@gmail.com, División: Ventas, Estado: Exitoso
+2024-12-05 21:59:17 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: alex.quiroga.perez@gmail.com, División: Almacenes, Estado: Exitoso
+2024-12-05 22:22:26 - IP: 127.0.0.1 - URL: http://127.0.0.1:5000/Ingresar - Usuario: root@neurus, División: root, Estado: Exitoso

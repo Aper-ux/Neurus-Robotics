@@ -1026,6 +1026,7 @@ def compra():
         print("Error: Proveedor no encontrado.")
         return redirect("/Compras/error_proveedor", code=307)
 
+    # quiza sea bueno quitarlo
     if len(producto) <= 2:  # Ajustado para mayor claridad
         return redirect("/Compras")
 

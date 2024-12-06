@@ -1485,3 +1485,348 @@
 2024-12-05 21:17:33 - ERROR - Error en el proceso: division by zero
 2024-12-05 21:17:33 - INFO - Fin del proceso.
 2024-12-05 21:17:33 - INFO - Fin del programa.
+2024-12-05 21:21:50 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-05 21:21:50 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 21:21:50 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:21:51 - WARNING -  * Debugger is active!
+2024-12-05 21:21:51 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:21:53 - INFO - 127.0.0.1 - - [05/Dec/2024 21:21:53] "GET /Compras HTTP/1.1" 200 -
+2024-12-05 21:21:53 - INFO - 127.0.0.1 - - [05/Dec/2024 21:21:53] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:21:53 - INFO - 127.0.0.1 - - [05/Dec/2024 21:21:53] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:21:53 - INFO - 127.0.0.1 - - [05/Dec/2024 21:21:53] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:21:53 - INFO - 127.0.0.1 - - [05/Dec/2024 21:21:53] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:25:46 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:25:46 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:25:46 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:25:46 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:25:47 - WARNING -  * Debugger is active!
+2024-12-05 21:25:47 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:33:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:42] "GET / HTTP/1.1" 200 -
+2024-12-05 21:33:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:42] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:33:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:42] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 21:33:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:42] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:33:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:42] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:33:58 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:58] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 21:33:59 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:59] "POST /Ventas HTTP/1.1" 200 -
+2024-12-05 21:33:59 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:59] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:33:59 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:59] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:33:59 - INFO - 127.0.0.1 - - [05/Dec/2024 21:33:59] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:34:16 - INFO - 127.0.0.1 - - [05/Dec/2024 21:34:16] "GET /Ventas/RV HTTP/1.1" 200 -
+2024-12-05 21:34:16 - INFO - 127.0.0.1 - - [05/Dec/2024 21:34:16] "[33mGET /Ventas/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:34:16 - INFO - 127.0.0.1 - - [05/Dec/2024 21:34:16] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:34:16 - INFO - 127.0.0.1 - - [05/Dec/2024 21:34:16] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:34:16 - INFO - 127.0.0.1 - - [05/Dec/2024 21:34:16] "[36mGET /static/vexels.png HTTP/1.1[0m" 304 -
+2024-12-05 21:34:55 - INFO - 127.0.0.1 - - [05/Dec/2024 21:34:55] "GET /Clientes HTTP/1.1" 200 -
+2024-12-05 21:34:56 - INFO - 127.0.0.1 - - [05/Dec/2024 21:34:56] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:34:56 - INFO - 127.0.0.1 - - [05/Dec/2024 21:34:56] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:34:56 - INFO - 127.0.0.1 - - [05/Dec/2024 21:34:56] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:35:43 - INFO - 127.0.0.1 - - [05/Dec/2024 21:35:43] "GET /Ventas HTTP/1.1" 200 -
+2024-12-05 21:35:43 - INFO - 127.0.0.1 - - [05/Dec/2024 21:35:43] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:35:43 - INFO - 127.0.0.1 - - [05/Dec/2024 21:35:43] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:35:43 - INFO - 127.0.0.1 - - [05/Dec/2024 21:35:43] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:35:47 - INFO - 127.0.0.1 - - [05/Dec/2024 21:35:47] "GET /Ventas/RV HTTP/1.1" 200 -
+2024-12-05 21:35:47 - INFO - 127.0.0.1 - - [05/Dec/2024 21:35:47] "[33mGET /Ventas/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:35:47 - INFO - 127.0.0.1 - - [05/Dec/2024 21:35:47] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:35:47 - INFO - 127.0.0.1 - - [05/Dec/2024 21:35:47] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:35:47 - INFO - 127.0.0.1 - - [05/Dec/2024 21:35:47] "[36mGET /static/vexels.png HTTP/1.1[0m" 304 -
+2024-12-05 21:36:01 - INFO - 127.0.0.1 - - [05/Dec/2024 21:36:01] "GET /Ventas HTTP/1.1" 200 -
+2024-12-05 21:36:01 - INFO - 127.0.0.1 - - [05/Dec/2024 21:36:01] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:36:01 - INFO - 127.0.0.1 - - [05/Dec/2024 21:36:01] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:36:01 - INFO - 127.0.0.1 - - [05/Dec/2024 21:36:01] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:36:17 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\Cliente.py', reloading
+2024-12-05 21:36:17 - INFO - 127.0.0.1 - - [05/Dec/2024 21:36:17] "[35m[1mPOST /Ventas/venta HTTP/1.1[0m" 500 -
+2024-12-05 21:36:17 - INFO - 127.0.0.1 - - [05/Dec/2024 21:36:17] "GET /Ventas/venta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-12-05 21:36:17 - INFO - 127.0.0.1 - - [05/Dec/2024 21:36:17] "GET /Ventas/venta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-12-05 21:36:17 - INFO - 127.0.0.1 - - [05/Dec/2024 21:36:17] "GET /Ventas/venta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-12-05 21:36:18 - INFO - 127.0.0.1 - - [05/Dec/2024 21:36:18] "[36mGET /Ventas/venta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-05 21:36:18 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:36:19 - WARNING -  * Debugger is active!
+2024-12-05 21:36:19 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:37:30 - INFO -  * Detected change in 'C:\\Users\\Guido\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\arrow\\arrow.py', reloading
+2024-12-05 21:37:30 - INFO -  * Detected change in 'C:\\Users\\Guido\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\arrow\\factory.py', reloading
+2024-12-05 21:37:30 - INFO -  * Detected change in 'C:\\Users\\Guido\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\arrow\\constants.py', reloading
+2024-12-05 21:37:30 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:37:31 - WARNING -  * Debugger is active!
+2024-12-05 21:37:31 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:39:23 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:39:23 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:39:23 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:39:23 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:39:24 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:39:25 - WARNING -  * Debugger is active!
+2024-12-05 21:39:25 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:40:09 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:09 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:09 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:09 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:40:11 - WARNING -  * Debugger is active!
+2024-12-05 21:40:11 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:40:25 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:25 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:25 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:25 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:26 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:40:27 - WARNING -  * Debugger is active!
+2024-12-05 21:40:27 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:40:27 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:27 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:27 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:28 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:40:29 - WARNING -  * Debugger is active!
+2024-12-05 21:40:29 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:40:32 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:32 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:32 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:32 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:32 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:40:33 - WARNING -  * Debugger is active!
+2024-12-05 21:40:33 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:40:38 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:38 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:38 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:38 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 21:40:39 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 21:40:40 - WARNING -  * Debugger is active!
+2024-12-05 21:40:40 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 21:46:56 - INFO - 127.0.0.1 - - [05/Dec/2024 21:46:56] "GET /Ventas HTTP/1.1" 200 -
+2024-12-05 21:46:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:46:57] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:46:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:46:57] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:46:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:46:57] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:46:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:46:57] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:47:15 - INFO - 127.0.0.1 - - [05/Dec/2024 21:47:15] "POST /Ventas/Prod HTTP/1.1" 200 -
+2024-12-05 21:47:15 - INFO - 127.0.0.1 - - [05/Dec/2024 21:47:15] "[33mGET /Ventas/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:47:15 - INFO - 127.0.0.1 - - [05/Dec/2024 21:47:15] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:47:15 - INFO - 127.0.0.1 - - [05/Dec/2024 21:47:15] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:47:26 - INFO - 127.0.0.1 - - [05/Dec/2024 21:47:26] "[35m[1mPOST /Ventas/venta HTTP/1.1[0m" 500 -
+2024-12-05 21:47:26 - INFO - 127.0.0.1 - - [05/Dec/2024 21:47:26] "[36mGET /Ventas/venta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-05 21:47:26 - INFO - 127.0.0.1 - - [05/Dec/2024 21:47:26] "[36mGET /Ventas/venta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-05 21:47:26 - INFO - 127.0.0.1 - - [05/Dec/2024 21:47:26] "[36mGET /Ventas/venta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-05 21:48:34 - INFO - 127.0.0.1 - - [05/Dec/2024 21:48:34] "[35m[1mPOST /Ventas/venta HTTP/1.1[0m" 500 -
+2024-12-05 21:48:34 - INFO - 127.0.0.1 - - [05/Dec/2024 21:48:34] "[36mGET /Ventas/venta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-05 21:48:34 - INFO - 127.0.0.1 - - [05/Dec/2024 21:48:34] "[36mGET /Ventas/venta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-05 21:48:34 - INFO - 127.0.0.1 - - [05/Dec/2024 21:48:34] "[36mGET /Ventas/venta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-05 21:51:10 - INFO - 127.0.0.1 - - [05/Dec/2024 21:51:10] "POST /Ventas/Prod HTTP/1.1" 200 -
+2024-12-05 21:51:10 - INFO - 127.0.0.1 - - [05/Dec/2024 21:51:10] "[33mGET /Ventas/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:51:10 - INFO - 127.0.0.1 - - [05/Dec/2024 21:51:10] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:51:10 - INFO - 127.0.0.1 - - [05/Dec/2024 21:51:10] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:51:10 - INFO - 127.0.0.1 - - [05/Dec/2024 21:51:10] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:51:27 - INFO - 127.0.0.1 - - [05/Dec/2024 21:51:27] "GET /Ventas HTTP/1.1" 200 -
+2024-12-05 21:51:27 - INFO - 127.0.0.1 - - [05/Dec/2024 21:51:27] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:51:27 - INFO - 127.0.0.1 - - [05/Dec/2024 21:51:27] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:51:27 - INFO - 127.0.0.1 - - [05/Dec/2024 21:51:27] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:53:14 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:14] "GET /Ventas/RV HTTP/1.1" 200 -
+2024-12-05 21:53:14 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:14] "[33mGET /Ventas/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:53:14 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:14] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:53:14 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:14] "[36mGET /static/vexels.png HTTP/1.1[0m" 304 -
+2024-12-05 21:53:14 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:14] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:53:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:42] "GET /Ventas/RV HTTP/1.1" 200 -
+2024-12-05 21:53:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:42] "[33mGET /Ventas/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:53:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:42] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:53:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:42] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:53:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:42] "[36mGET /static/vexels.png HTTP/1.1[0m" 304 -
+2024-12-05 21:53:42 - INFO - 127.0.0.1 - - [05/Dec/2024 21:53:42] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:54:11 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:11] "GET /Clientes HTTP/1.1" 200 -
+2024-12-05 21:54:11 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:11] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:54:11 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:11] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:54:11 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:11] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:54:49 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:49] "GET / HTTP/1.1" 200 -
+2024-12-05 21:54:49 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:49] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:54:49 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:49] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 21:54:49 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:49] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:54:49 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:49] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:54:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:57] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 21:54:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:57] "POST /Login/error HTTP/1.1" 200 -
+2024-12-05 21:54:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:57] "[33mGET /Login/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:54:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:57] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 21:54:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:57] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:54:57 - INFO - 127.0.0.1 - - [05/Dec/2024 21:54:57] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:55:02 - INFO - 127.0.0.1 - - [05/Dec/2024 21:55:02] "GET / HTTP/1.1" 200 -
+2024-12-05 21:55:02 - INFO - 127.0.0.1 - - [05/Dec/2024 21:55:02] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:55:02 - INFO - 127.0.0.1 - - [05/Dec/2024 21:55:02] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 21:55:02 - INFO - 127.0.0.1 - - [05/Dec/2024 21:55:02] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:55:02 - INFO - 127.0.0.1 - - [05/Dec/2024 21:55:02] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:58:43 - INFO - 127.0.0.1 - - [05/Dec/2024 21:58:43] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 21:58:44 - INFO - 127.0.0.1 - - [05/Dec/2024 21:58:44] "POST /Ventas HTTP/1.1" 200 -
+2024-12-05 21:58:44 - INFO - 127.0.0.1 - - [05/Dec/2024 21:58:44] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:58:44 - INFO - 127.0.0.1 - - [05/Dec/2024 21:58:44] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:58:44 - INFO - 127.0.0.1 - - [05/Dec/2024 21:58:44] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:59:07 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:07] "GET / HTTP/1.1" 200 -
+2024-12-05 21:59:07 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:07] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:59:07 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:07] "[36mGET /static/LogIn.css HTTP/1.1[0m" 304 -
+2024-12-05 21:59:07 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:07] "[36mGET /static/Log.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:59:07 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:07] "[36mGET /static/redes.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:59:17 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:17] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 21:59:18 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:18] "POST /Productos HTTP/1.1" 200 -
+2024-12-05 21:59:19 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:19] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:59:19 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:19] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:59:19 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:19] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 21:59:24 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:24] "GET /Proveedores HTTP/1.1" 200 -
+2024-12-05 21:59:24 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:24] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 21:59:24 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:24] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 21:59:24 - INFO - 127.0.0.1 - - [05/Dec/2024 21:59:24] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:02:56 - INFO -  * Detected change in 'C:\\Users\\Guido\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\reportlab\\platypus\\doctemplate.py', reloading
+2024-12-05 22:02:56 - INFO -  * Detected change in 'C:\\Users\\Guido\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\reportlab\\pdfgen\\canvas.py', reloading
+2024-12-05 22:02:56 - INFO -  * Detected change in 'C:\\Users\\Guido\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\reportlab\\pdfbase\\pdfdoc.py', reloading
+2024-12-05 22:02:56 - INFO - 127.0.0.1 - - [05/Dec/2024 22:02:56] "[35m[1mGET /Proveedores/Imprimir HTTP/1.1[0m" 500 -
+2024-12-05 22:02:56 - INFO - 127.0.0.1 - - [05/Dec/2024 22:02:56] "GET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-12-05 22:02:56 - INFO - 127.0.0.1 - - [05/Dec/2024 22:02:56] "GET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-12-05 22:02:56 - INFO - 127.0.0.1 - - [05/Dec/2024 22:02:56] "GET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-12-05 22:02:56 - INFO - 127.0.0.1 - - [05/Dec/2024 22:02:56] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-05 22:02:57 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 22:02:58 - WARNING -  * Debugger is active!
+2024-12-05 22:02:58 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 22:03:14 - INFO - 127.0.0.1 - - [05/Dec/2024 22:03:14] "GET /Proveedores HTTP/1.1" 200 -
+2024-12-05 22:03:14 - INFO - 127.0.0.1 - - [05/Dec/2024 22:03:14] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:03:14 - INFO - 127.0.0.1 - - [05/Dec/2024 22:03:14] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:03:14 - INFO - 127.0.0.1 - - [05/Dec/2024 22:03:14] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:03:14 - INFO - 127.0.0.1 - - [05/Dec/2024 22:03:14] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:03:17 - INFO - 127.0.0.1 - - [05/Dec/2024 22:03:17] "[35m[1mGET /Proveedores/Imprimir HTTP/1.1[0m" 500 -
+2024-12-05 22:03:17 - INFO - 127.0.0.1 - - [05/Dec/2024 22:03:17] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-05 22:03:17 - INFO - 127.0.0.1 - - [05/Dec/2024 22:03:17] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-05 22:03:17 - INFO - 127.0.0.1 - - [05/Dec/2024 22:03:17] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-05 22:03:42 - INFO -  * Detected change in 'C:\\Users\\Guido\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\os.py', reloading
+2024-12-05 22:03:42 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 22:03:43 - WARNING -  * Debugger is active!
+2024-12-05 22:03:43 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 22:04:22 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:04:22 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 22:04:23 - WARNING -  * Debugger is active!
+2024-12-05 22:04:23 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 22:04:32 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:32] "[35m[1mGET /Proveedores/Imprimir HTTP/1.1[0m" 500 -
+2024-12-05 22:04:33 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:33] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-05 22:04:33 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:33] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-05 22:04:33 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:33] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-05 22:04:38 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:38] "GET /Proveedores HTTP/1.1" 200 -
+2024-12-05 22:04:38 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:38] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:04:38 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:38] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:04:38 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:38] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:04:38 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:38] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:04:41 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:41] "[35m[1mGET /Proveedores/Imprimir HTTP/1.1[0m" 500 -
+2024-12-05 22:04:41 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:41] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-05 22:04:41 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:41] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-05 22:04:41 - INFO - 127.0.0.1 - - [05/Dec/2024 22:04:41] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-05 22:04:54 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:04:54 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:04:55 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 22:04:56 - WARNING -  * Debugger is active!
+2024-12-05 22:04:56 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 22:05:02 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:02] "GET /Proveedores HTTP/1.1" 200 -
+2024-12-05 22:05:02 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:02] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:05:02 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:02] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:05:02 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:02] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:05:02 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:02] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:05:04 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:04] "[35m[1mGET /Proveedores/Imprimir HTTP/1.1[0m" 500 -
+2024-12-05 22:05:04 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:04] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-05 22:05:04 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:04] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-05 22:05:04 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:04] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-05 22:05:20 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:20] "[35m[1mGET /Proveedores/Imprimir HTTP/1.1[0m" 500 -
+2024-12-05 22:05:20 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:20] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-05 22:05:20 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:20] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-05 22:05:20 - INFO - 127.0.0.1 - - [05/Dec/2024 22:05:20] "[36mGET /Proveedores/Imprimir?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-05 22:05:54 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:05:54 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:05:54 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:05:54 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 22:05:55 - WARNING -  * Debugger is active!
+2024-12-05 22:05:55 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 22:05:57 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:05:57 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:05:57 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:05:57 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:05:57 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 22:05:59 - WARNING -  * Debugger is active!
+2024-12-05 22:05:59 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 22:06:01 - INFO - 127.0.0.1 - - [05/Dec/2024 22:06:01] "[32mGET /Proveedores/Imprimir HTTP/1.1[0m" 302 -
+2024-12-05 22:06:02 - INFO - 127.0.0.1 - - [05/Dec/2024 22:06:02] "GET /Proveedores HTTP/1.1" 200 -
+2024-12-05 22:06:02 - INFO - 127.0.0.1 - - [05/Dec/2024 22:06:02] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:06:02 - INFO - 127.0.0.1 - - [05/Dec/2024 22:06:02] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:06:02 - INFO - 127.0.0.1 - - [05/Dec/2024 22:06:02] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:07:35 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:07:35 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:07:35 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:07:36 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 22:07:37 - WARNING -  * Debugger is active!
+2024-12-05 22:07:37 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 22:07:39 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:07:39 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:07:39 - INFO -  * Detected change in 'c:\\Neurus-Robotics\\app.py', reloading
+2024-12-05 22:07:40 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 22:07:41 - WARNING -  * Debugger is active!
+2024-12-05 22:07:41 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 22:08:49 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-05 22:08:49 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 22:08:49 - INFO -  * Restarting with watchdog (windowsapi)
+2024-12-05 22:08:50 - WARNING -  * Debugger is active!
+2024-12-05 22:08:50 - INFO -  * Debugger PIN: 803-253-547
+2024-12-05 22:08:52 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:52] "GET /Proveedores HTTP/1.1" 200 -
+2024-12-05 22:08:52 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:52] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:08:52 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:52] "GET /static/Formato.css HTTP/1.1" 200 -
+2024-12-05 22:08:52 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:52] "GET /static/fondo.jpg HTTP/1.1" 200 -
+2024-12-05 22:08:52 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:52] "GET /static/icon.jpg HTTP/1.1" 200 -
+2024-12-05 22:08:55 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:55] "[32mGET /Proveedores/Imprimir HTTP/1.1[0m" 302 -
+2024-12-05 22:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:56] "GET /Proveedores HTTP/1.1" 200 -
+2024-12-05 22:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:56] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:56] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:08:56 - INFO - 127.0.0.1 - - [05/Dec/2024 22:08:56] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:10:08 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:08] "POST /Proveedores/BuscarProveedor HTTP/1.1" 200 -
+2024-12-05 22:10:08 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:08] "[33mGET /Proveedores/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:10:08 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:08] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:10:08 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:08] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:10:18 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:18] "POST /Proveedores/BuscarProveedor HTTP/1.1" 200 -
+2024-12-05 22:10:18 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:18] "[33mGET /Proveedores/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:10:18 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:18] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:10:18 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:18] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:10:22 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:22] "POST /Proveedores/BuscarProveedor HTTP/1.1" 200 -
+2024-12-05 22:10:22 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:22] "[33mGET /Proveedores/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:10:22 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:22] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:10:22 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:22] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:10:30 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:30] "GET /Compras HTTP/1.1" 200 -
+2024-12-05 22:10:30 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:30] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:10:30 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:30] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:10:30 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:30] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:10:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:34] "GET /Compras/RC HTTP/1.1" 200 -
+2024-12-05 22:10:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:34] "[33mGET /Compras/js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:10:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:34] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:10:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:34] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:10:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:34] "GET /static/vexels.png HTTP/1.1" 200 -
+2024-12-05 22:10:40 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:40] "GET /Productos HTTP/1.1" 200 -
+2024-12-05 22:10:40 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:40] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:10:40 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:40] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:10:40 - INFO - 127.0.0.1 - - [05/Dec/2024 22:10:40] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:22:17 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:17] "GET / HTTP/1.1" 200 -
+2024-12-05 22:22:17 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:17] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:22:17 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:17] "GET /static/LogIn.css HTTP/1.1" 200 -
+2024-12-05 22:22:17 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:17] "GET /static/Log.jpg HTTP/1.1" 200 -
+2024-12-05 22:22:17 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:17] "GET /static/redes.jpg HTTP/1.1" 200 -
+2024-12-05 22:22:26 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:26] "[32mPOST /Ingresar HTTP/1.1[0m" 307 -
+2024-12-05 22:22:29 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:29] "POST /Usuarios HTTP/1.1" 200 -
+2024-12-05 22:22:29 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:29] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:22:29 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:29] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:22:29 - INFO - 127.0.0.1 - - [05/Dec/2024 22:22:29] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:23:40 - INFO - 127.0.0.1 - - [05/Dec/2024 22:23:40] "POST /Usuarios HTTP/1.1" 200 -
+2024-12-05 22:23:40 - INFO - 127.0.0.1 - - [05/Dec/2024 22:23:40] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:23:40 - INFO - 127.0.0.1 - - [05/Dec/2024 22:23:40] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:23:40 - INFO - 127.0.0.1 - - [05/Dec/2024 22:23:40] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:23:40 - INFO - 127.0.0.1 - - [05/Dec/2024 22:23:40] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:24:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:24:34] "POST /Usuarios HTTP/1.1" 200 -
+2024-12-05 22:24:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:24:34] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:24:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:24:34] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:24:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:24:34] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:24:34 - INFO - 127.0.0.1 - - [05/Dec/2024 22:24:34] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:26:46 - INFO - 127.0.0.1 - - [05/Dec/2024 22:26:46] "POST /Usuarios HTTP/1.1" 200 -
+2024-12-05 22:26:46 - INFO - 127.0.0.1 - - [05/Dec/2024 22:26:46] "[33mGET /js/bootstrap.js HTTP/1.1[0m" 404 -
+2024-12-05 22:26:46 - INFO - 127.0.0.1 - - [05/Dec/2024 22:26:46] "[36mGET /static/Formato.css HTTP/1.1[0m" 304 -
+2024-12-05 22:26:46 - INFO - 127.0.0.1 - - [05/Dec/2024 22:26:46] "[36mGET /static/fondo.jpg HTTP/1.1[0m" 304 -
+2024-12-05 22:26:46 - INFO - 127.0.0.1 - - [05/Dec/2024 22:26:46] "[36mGET /static/icon.jpg HTTP/1.1[0m" 304 -
+2024-12-06 00:33:28 - INFO - Inicio del programa.
+2024-12-06 00:33:28 - INFO - Inicio del proceso.
+2024-12-06 00:33:28 - ERROR - Error en el proceso: division by zero
+2024-12-06 00:33:28 - INFO - Fin del proceso.
+2024-12-06 00:33:28 - INFO - Fin del programa.
+2024-12-06 00:33:28 - INFO - Inicio del programa.
+2024-12-06 00:33:28 - INFO - Inicio del proceso.
+2024-12-06 00:33:28 - ERROR - Error en el proceso: division by zero
+2024-12-06 00:33:28 - INFO - Fin del proceso.
+2024-12-06 00:33:28 - INFO - Fin del programa.
